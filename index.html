@@ -1,803 +1,686 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pragati Dharmale — AI/ML Researcher & Educator</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    /* ── Reset & Variables ─────────────────────────────────────────────── */
-    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pragati Dharmale — AI/ML Researcher & Educator</title>
+<meta name="description" content="Pragati Dharmale — AI/ML Researcher, IEEE Author, CIS Faculty, and CS Educator. Bridging research and real-world learning since 2003.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & TOKENS ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --ink:   #0f1117;
+  --ink2:  #3a3d4a;
+  --ink3:  #6b7080;
+  --sand:  #f5f2ed;
+  --sand2: #ede9e2;
+  --sand3: #e6e1d8;
+  --white: #ffffff;
+  --teal:       #0d7a6b;
+  --teal-light: #e0f2ef;
+  --teal-mid:   #b2e0d9;
+  --gold:        #b8860b;
+  --gold-light:  #fdf6e3;
+  --accent:       #1a3c5e;
+  --accent-light: #e8f0f8;
+  --border: rgba(15,17,23,0.10);
+  --serif: 'DM Serif Display', Georgia, serif;
+  --sans:  'Outfit', system-ui, sans-serif;
+  --mono:  'DM Mono', monospace;
+  --r: 10px;
+  --shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); background: var(--sand); color: var(--ink); line-height: 1.6; }
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
 
-    :root {
-      --ink:       #0f1923;
-      --ink-light: #3d4f5c;
-      --paper:     #f7f4ef;
-      --paper-2:   #eeeae2;
-      --teal:      #0d7c6e;
-      --teal-light:#e0f2ef;
-      --gold:      #c8900a;
-      --gold-light:#fdf3dc;
-      --red:       #c0392b;
-      --border:    #d4cfc5;
-      --shadow:    0 2px 20px rgba(15,25,35,0.08);
-      --shadow-lg: 0 8px 40px rgba(15,25,35,0.14);
-      --radius:    4px;
-      --serif:     'DM Serif Display', Georgia, serif;
-      --sans:      'DM Sans', system-ui, sans-serif;
-      --mono:      'JetBrains Mono', monospace;
-    }
+/* ── NAV ── */
+nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 48px; border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; background: rgba(245,242,237,0.96);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); z-index: 100;
+}
+.nav-logo { font-family: var(--serif); font-size: 18px; letter-spacing: -0.3px; color: var(--ink); }
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a { font-size: 12px; font-weight: 500; color: var(--ink3); letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+.nav-links a:hover { color: var(--teal); }
 
-    html { scroll-behavior: smooth; }
+/* ── HERO ── */
+.hero { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; padding: 72px 48px 80px; border-bottom: 1px solid var(--border); }
+.hero-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 20px; }
+.hero-name { font-family: var(--serif); font-size: clamp(46px, 5.5vw, 66px); line-height: 1.05; letter-spacing: -1.5px; margin-bottom: 20px; }
+.hero-name em { color: var(--teal); font-style: italic; }
+.hero-desc { font-size: 15px; font-weight: 300; color: var(--ink2); line-height: 1.8; margin-bottom: 32px; max-width: 400px; }
+.hero-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+.pill { font-size: 12px; font-weight: 500; padding: 5px 12px; border-radius: 20px; background: var(--white); border: 1px solid var(--border); color: var(--ink2); }
+.pill-teal { background: var(--teal-light); border-color: var(--teal-mid); color: var(--teal); }
+.hero-links { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 500; padding: 10px 20px; border-radius: 7px; transition: all 0.2s; letter-spacing: 0.02em; }
+.btn-primary { background: var(--teal); color: white; }
+.btn-primary:hover { background: #0a6358; transform: translateY(-1px); }
+.btn-outline { border: 1px solid var(--border); color: var(--ink2); background: transparent; }
+.btn-outline:hover { border-color: var(--teal); color: var(--teal); }
 
-    body {
-      font-family: var(--sans);
-      background: var(--paper);
-      color: var(--ink);
-      font-size: 16px;
-      line-height: 1.7;
-    }
+/* hero card */
+.hero-card { background: var(--white); border-radius: 16px; padding: 30px; border: 1px solid var(--border); box-shadow: var(--shadow); }
+.avatar { width: 68px; height: 68px; border-radius: 50%; background: linear-gradient(135deg, var(--teal), var(--accent)); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 24px; color: white; margin-bottom: 14px; }
+.hero-card h3 { font-family: var(--serif); font-size: 20px; margin-bottom: 3px; }
+.hero-card .role { font-size: 12px; color: var(--teal); font-weight: 500; margin-bottom: 20px; font-family: var(--mono); letter-spacing: 0.06em; }
+.stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 20px; }
+.stat { background: var(--sand); border-radius: var(--r); padding: 12px 8px; text-align: center; }
+.stat-n { font-family: var(--serif); font-size: 22px; color: var(--ink); line-height: 1; }
+.stat-l { font-size: 10px; color: var(--ink3); letter-spacing: 0.04em; text-transform: uppercase; margin-top: 3px; font-weight: 500; }
+.card-links { display: flex; flex-direction: column; gap: 6px; }
+.card-link { display: flex; align-items: center; gap: 9px; font-size: 12px; color: var(--ink3); padding: 6px 10px; border-radius: 6px; transition: background 0.2s; }
+.card-link:hover { background: var(--sand); color: var(--teal); }
+.card-link-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
 
-    /* ── Typography ────────────────────────────────────────────────────── */
-    h1,h2,h3,h4 { font-family: var(--serif); font-weight: 400; line-height:1.2; }
-    h1 { font-size: clamp(2.6rem, 5vw, 4rem); }
-    h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); }
-    h3 { font-size: 1.3rem; }
-    h4 { font-size: 1.05rem; }
-    p  { color: var(--ink-light); }
-    a  { color: var(--teal); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+/* ── SECTION WRAPPER ── */
+.page { max-width: 960px; margin: 0 auto; padding: 0 48px 80px; }
+.section { margin-top: 72px; }
+.sec-header { display: flex; align-items: baseline; gap: 14px; margin-bottom: 28px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+.sec-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); flex-shrink: 0; }
+.sec-title { font-family: var(--serif); font-size: 26px; letter-spacing: -0.5px; }
 
-    /* ── Layout ────────────────────────────────────────────────────────── */
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
-    .section   { padding: 5rem 0; }
-    .section + .section { border-top: 1px solid var(--border); }
+/* ── PUBLICATIONS TABS ── */
+.pub-tabs { display: flex; gap: 8px; margin-bottom: 20px; }
+.pub-tab { font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; padding: 7px 16px; border-radius: 20px; border: 1px solid var(--border); background: transparent; color: var(--ink3); cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 7px; }
+.pub-tab:hover { border-color: var(--teal); color: var(--teal); }
+.pub-tab.active { background: var(--teal); color: white; border-color: var(--teal); }
+.pub-tab.active .tab-cnt { background: rgba(255,255,255,0.25); color: white; }
+.tab-cnt { font-size: 10px; padding: 1px 6px; border-radius: 8px; background: var(--sand2); color: var(--ink3); }
 
-    /* ── Navigation ────────────────────────────────────────────────────── */
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(247,244,239,0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-inner {
-      display: flex; align-items: center; justify-content: space-between;
-      max-width: 1100px; margin: 0 auto; padding: 0 2rem;
-      height: 62px;
-    }
-    .nav-logo {
-      font-family: var(--serif); font-size: 1.15rem;
-      color: var(--ink); letter-spacing: 0.01em;
-    }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      font-size: 0.88rem; font-weight: 500; letter-spacing: 0.04em;
-      text-transform: uppercase; color: var(--ink-light);
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--teal); text-decoration: none; }
+/* ── PUB LIST ── */
+.pub-panel { display: flex; flex-direction: column; gap: 12px; }
+.sccur-note { font-size: 12px; color: var(--ink3); font-family: var(--mono); letter-spacing: 0.03em; padding: 9px 14px; background: var(--sand2); border-left: 2px solid var(--teal); border-radius: 0 6px 6px 0; margin-bottom: 4px; }
+.pub-item { background: var(--white); border-radius: var(--r); border: 1px solid var(--border); padding: 18px 22px; display: grid; grid-template-columns: 28px 1fr auto; gap: 14px; align-items: start; transition: box-shadow 0.2s; }
+.pub-item:hover { box-shadow: var(--shadow); }
+.pub-num { font-family: var(--mono); font-size: 11px; color: var(--teal); font-weight: 500; padding-top: 2px; }
+.pub-venue-badge { font-family: var(--mono); font-size: 10px; font-weight: 500; color: var(--teal); letter-spacing: 0.06em; margin-bottom: 5px; }
+.pub-title { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 5px; line-height: 1.45; }
+.pub-meta { font-size: 11px; color: var(--ink3); margin-bottom: 8px; }
+.pub-award { font-size: 10px; font-weight: 500; color: var(--gold); border: 1px solid rgba(184,134,11,0.3); background: var(--gold-light); padding: 3px 10px; border-radius: 4px; white-space: nowrap; align-self: start; font-family: var(--mono); letter-spacing: 0.04em; }
+.tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.tag { font-size: 10px; font-weight: 500; padding: 2px 9px; border-radius: 20px; letter-spacing: 0.03em; }
+.tag-ieee { background: var(--accent-light); color: var(--accent); }
+.tag-ai { background: var(--teal-light); color: var(--teal); }
+.tag-signal { background: var(--gold-light); color: var(--gold); }
+.tag-default { background: var(--sand2); color: var(--ink3); }
 
-    /* ── Hero ──────────────────────────────────────────────────────────── */
-    #hero {
-      min-height: 92vh;
-      display: grid;
-      grid-template-columns: 1fr 420px;
-      gap: 4rem;
-      align-items: center;
-      padding: 6rem 2rem 4rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .hero-eyebrow {
-      font-family: var(--mono); font-size: 0.82rem;
-      color: var(--teal); letter-spacing: 0.12em;
-      text-transform: uppercase; margin-bottom: 1rem;
-      display: flex; align-items: center; gap: 0.6rem;
-    }
-    .hero-eyebrow::before {
-      content: ''; display: block; width: 32px; height: 1px;
-      background: var(--teal);
-    }
-    .hero-name { color: var(--ink); margin-bottom: 0.6rem; }
-    .hero-name em { color: var(--teal); font-style: italic; }
-    .hero-title {
-      font-family: var(--sans); font-size: 1.1rem; font-weight: 300;
-      color: var(--ink-light); margin-bottom: 2rem; line-height: 1.6;
-    }
-    .hero-badges {
-      display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2.5rem;
-    }
-    .badge {
-      font-family: var(--mono); font-size: 0.76rem;
-      padding: 0.35rem 0.8rem; border-radius: 2px;
-      font-weight: 500; letter-spacing: 0.03em;
-    }
-    .badge-teal  { background: var(--teal-light); color: var(--teal); }
-    .badge-gold  { background: var(--gold-light);  color: var(--gold); }
-    .badge-ink   { background: var(--paper-2);      color: var(--ink-light); }
-    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.75rem 1.6rem; font-size: 0.88rem; font-weight: 500;
-      border-radius: var(--radius); cursor: pointer;
-      transition: all 0.2s; text-decoration: none;
-    }
-    .btn-primary {
-      background: var(--teal); color: #fff;
-      border: 1.5px solid var(--teal);
-    }
-    .btn-primary:hover { background: #0a6459; text-decoration: none; }
-    .btn-outline {
-      background: transparent; color: var(--ink);
-      border: 1.5px solid var(--border);
-    }
-    .btn-outline:hover { border-color: var(--ink); text-decoration: none; }
+/* ── PROJECTS ── */
+.proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.proj-card { background: var(--white); border-radius: var(--r); border: 1px solid var(--border); padding: 20px; transition: all 0.2s; }
+.proj-card:hover { border-color: var(--teal); transform: translateY(-2px); box-shadow: var(--shadow); }
+.proj-status { display: inline-flex; align-items: center; gap: 5px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; padding: 3px 9px; border-radius: 20px; margin-bottom: 12px; }
+.status-active { background: var(--teal-light); color: var(--teal); border: 1px solid var(--teal-mid); }
+.status-past { background: var(--sand2); color: var(--ink3); border: 1px solid var(--border); }
+.proj-title { font-size: 14px; font-weight: 600; margin-bottom: 7px; line-height: 1.35; }
+.proj-desc { font-size: 12px; color: var(--ink3); line-height: 1.6; margin-bottom: 12px; }
+.proj-tags { display: flex; gap: 5px; flex-wrap: wrap; }
+.proj-tag { font-family: var(--mono); font-size: 10px; padding: 2px 7px; border-radius: 4px; background: var(--sand); color: var(--ink3); border: 1px solid var(--border); }
 
-    /* Hero Card */
-    .hero-card {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 2rem;
-      box-shadow: var(--shadow-lg);
-      position: relative;
-    }
-    .hero-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 4px;
-      background: linear-gradient(90deg, var(--teal), var(--gold));
-      border-radius: 8px 8px 0 0;
-    }
-    .profile-avatar {
-      width: 90px; height: 90px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--teal), #0a4f45);
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--serif); font-size: 2rem; color: #fff;
-      margin-bottom: 1.2rem; letter-spacing: 0.02em;
-    }
-    .card-name { font-family: var(--serif); font-size: 1.3rem; color: var(--ink); margin-bottom: 0.2rem; }
-    .card-role { font-size: 0.85rem; color: var(--ink-light); margin-bottom: 1.4rem; }
-    .card-stats {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 0.8rem; margin-bottom: 1.4rem;
-    }
-    .stat {
-      background: var(--paper); border-radius: var(--radius);
-      padding: 0.7rem; text-align: center;
-    }
-    .stat-num { font-family: var(--serif); font-size: 1.6rem; color: var(--teal); line-height: 1; }
-    .stat-label { font-size: 0.72rem; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.2rem; }
-    .card-links { display: flex; flex-direction: column; gap: 0.5rem; }
-    .card-link {
-      display: flex; align-items: center; gap: 0.6rem;
-      font-size: 0.82rem; color: var(--ink-light);
-      padding: 0.5rem 0.7rem; border-radius: var(--radius);
-      transition: background 0.15s;
-    }
-    .card-link:hover { background: var(--paper-2); text-decoration: none; color: var(--teal); }
-    .card-link svg { flex-shrink: 0; }
+/* ── PATENTS ── */
+.patent-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.patent-card { background: var(--white); border-radius: var(--r); border: 1px solid var(--border); padding: 22px; display: flex; gap: 16px; align-items: flex-start; transition: box-shadow 0.2s; }
+.patent-card:hover { box-shadow: var(--shadow); }
+.patent-icon { font-size: 28px; flex-shrink: 0; width: 48px; height: 48px; background: var(--sand); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+.patent-title { font-size: 14px; font-weight: 600; margin-bottom: 6px; line-height: 1.35; }
+.patent-desc { font-size: 12px; color: var(--ink3); line-height: 1.6; }
 
-    /* ── Section Headers ───────────────────────────────────────────────── */
-    .section-label {
-      font-family: var(--mono); font-size: 0.78rem;
-      color: var(--teal); letter-spacing: 0.14em;
-      text-transform: uppercase; margin-bottom: 0.5rem;
-    }
-    .section-title { color: var(--ink); margin-bottom: 0.7rem; }
-    .section-sub   { color: var(--ink-light); font-size: 1rem; max-width: 600px; margin-bottom: 3rem; }
-    .divider { width: 48px; height: 2px; background: var(--teal); margin: 1rem 0 2.5rem; }
+/* ── GITHUB PROJECTS ── */
+.github-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.gh-card { background: var(--white); border-radius: var(--r); border: 1px solid var(--border); padding: 20px; transition: all 0.2s; display: flex; flex-direction: column; }
+.gh-card:hover { border-color: var(--teal); transform: translateY(-2px); box-shadow: var(--shadow); }
+.gh-icon { font-size: 20px; width: 38px; height: 38px; background: var(--sand); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+.gh-title { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+.gh-desc { font-size: 12px; color: var(--ink3); line-height: 1.6; margin-bottom: 12px; flex: 1; }
+.gh-tags { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 14px; }
+.gh-tag { font-family: var(--mono); font-size: 10px; padding: 2px 7px; border-radius: 4px; background: var(--sand); color: var(--ink3); border: 1px solid var(--border); }
+.gh-link { font-size: 12px; font-weight: 500; color: var(--teal); font-family: var(--mono); letter-spacing: 0.04em; }
+.gh-link:hover { text-decoration: underline; }
 
-    /* ── Research / Publications ───────────────────────────────────────── */
-    .papers-grid { display: grid; gap: 1.2rem; }
-    .paper-card {
-      background: #fff; border: 1px solid var(--border);
-      border-radius: 6px; padding: 1.4rem 1.6rem;
-      display: grid; grid-template-columns: auto 1fr;
-      gap: 1.2rem; align-items: start;
-      transition: box-shadow 0.2s, transform 0.2s;
-    }
-    .paper-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
-    .paper-num {
-      font-family: var(--mono); font-size: 1.4rem;
-      color: var(--paper-2); line-height: 1; font-weight: 500;
-      padding-top: 0.2rem; min-width: 2rem;
-    }
-    .paper-title { font-family: var(--serif); font-size: 1.05rem; color: var(--ink); margin-bottom: 0.4rem; }
-    .paper-meta  { font-size: 0.82rem; color: var(--ink-light); margin-bottom: 0.6rem; }
-    .paper-tags  { display: flex; gap: 0.4rem; flex-wrap: wrap; }
-    .tag {
-      font-size: 0.72rem; padding: 0.2rem 0.6rem;
-      border-radius: 2px; font-family: var(--mono);
-    }
-    .tag-ieee  { background: #dbeafe; color: #1d4ed8; }
-    .tag-ml    { background: var(--teal-light); color: var(--teal); }
-    .tag-eeg   { background: #ede9fe; color: #6d28d9; }
-    .tag-edu   { background: var(--gold-light); color: var(--gold); }
+/* ── FEATURED PROJECT ── */
+.feat-wrap { margin-bottom: 24px; }
+.feat-card {
+  background: var(--white); border: 2px solid var(--teal);
+  border-radius: 14px; padding: 28px 30px;
+  display: grid; grid-template-columns: 1fr 230px; gap: 32px; align-items: start;
+  position: relative; overflow: hidden;
+  box-shadow: 0 6px 36px rgba(13,122,107,0.10);
+}
+.feat-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--teal) 0%, var(--accent) 100%);
+}
+.feat-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--mono); font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+  background: var(--teal-light); color: var(--teal); border: 1px solid var(--teal-mid);
+  padding: 4px 12px; border-radius: 20px; margin-bottom: 13px;
+}
+.feat-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--teal); animation: fdot 2s infinite; }
+@keyframes fdot { 0%,100%{opacity:1} 50%{opacity:.25} }
+.feat-title { font-family: var(--serif); font-size: 22px; letter-spacing: -0.3px; margin-bottom: 10px; line-height: 1.2; }
+.feat-desc { font-size: 14px; color: var(--ink2); line-height: 1.8; font-weight: 300; margin-bottom: 18px; }
+.feat-stack { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 20px; }
+.feat-tag { font-family: var(--mono); font-size: 11px; padding: 3px 11px; border-radius: 5px; border: 1px solid var(--border); background: var(--sand); color: var(--ink2); }
+.feat-tag-hi { background: var(--teal-light); color: var(--teal); border-color: var(--teal-mid); }
+.feat-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.feat-side { display: flex; flex-direction: column; gap: 10px; }
+.feat-stat { background: var(--sand); border: 1px solid var(--border); border-radius: var(--r); padding: 13px 16px; display: flex; align-items: center; gap: 12px; }
+.feat-stat-icon { font-size: 18px; width: 34px; height: 34px; background: var(--white); border-radius: 8px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border); flex-shrink: 0; }
+.feat-stat-label { font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal); margin-bottom: 2px; }
+.feat-stat-val { font-size: 13px; color: var(--ink); font-weight: 500; }
+@media(max-width: 820px) {
+  .feat-card { grid-template-columns: 1fr; gap: 20px; }
+  .feat-side { flex-direction: row; flex-wrap: wrap; }
+  .feat-stat { flex: 1; min-width: 140px; }
+}
 
-    /* ── Patents ───────────────────────────────────────────────────────── */
-    .patents-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-    .patent-card {
-      background: #fff; border: 1px solid var(--border);
-      border-radius: 6px; padding: 1.6rem;
-      position: relative; overflow: hidden;
-      transition: box-shadow 0.2s;
-    }
-    .patent-card:hover { box-shadow: var(--shadow); }
-    .patent-card::after {
-      content: '⚙'; position: absolute; bottom: -10px; right: -5px;
-      font-size: 5rem; color: var(--paper-2); line-height: 1;
-      pointer-events: none;
-    }
-    .patent-icon { font-size: 1.8rem; margin-bottom: 0.8rem; }
-    .patent-title { font-family: var(--serif); font-size: 1.05rem; color: var(--ink); margin-bottom: 0.5rem; }
-    .patent-desc  { font-size: 0.88rem; color: var(--ink-light); }
+/* ── BOOK ── */
+.book-card { background: var(--white); border-radius: 12px; border: 1px solid var(--border); padding: 28px 32px; display: grid; grid-template-columns: 88px 1fr; gap: 24px; align-items: start; }
+.book-cover { width: 88px; height: 118px; background: linear-gradient(160deg, #1a3c5e 55%, #0d7a6b); border-radius: 5px; display: flex; align-items: center; justify-content: center; font-size: 9px; color: rgba(255,255,255,0.7); text-align: center; line-height: 1.5; font-family: var(--mono); letter-spacing: 0.05em; padding: 10px; box-shadow: 3px 3px 0 rgba(0,0,0,0.12); }
+.book-title { font-family: var(--serif); font-size: 19px; line-height: 1.3; margin-bottom: 6px; }
+.book-author { font-size: 12px; color: var(--ink3); margin-bottom: 10px; font-family: var(--mono); }
+.book-desc { font-size: 13px; color: var(--ink2); line-height: 1.7; }
 
-    /* ── Projects ──────────────────────────────────────────────────────── */
-    .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-    .project-card {
-      background: #fff; border: 1px solid var(--border);
-      border-radius: 6px; overflow: hidden;
-      transition: box-shadow 0.2s, transform 0.2s;
-      display: flex; flex-direction: column;
-    }
-    .project-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
-    .project-header {
-      padding: 1.4rem 1.4rem 0;
-      display: flex; align-items: flex-start; justify-content: space-between;
-    }
-    .project-icon { font-size: 1.8rem; }
-    .project-lang {
-      font-family: var(--mono); font-size: 0.72rem;
-      color: var(--teal); background: var(--teal-light);
-      padding: 0.2rem 0.6rem; border-radius: 2px;
-    }
-    .project-body { padding: 0.8rem 1.4rem 1.4rem; flex: 1; }
-    .project-title { font-family: var(--serif); font-size: 1rem; color: var(--ink); margin-bottom: 0.4rem; }
-    .project-desc  { font-size: 0.85rem; color: var(--ink-light); margin-bottom: 1rem; }
-    .project-tech  { display: flex; gap: 0.4rem; flex-wrap: wrap; }
-    .tech-tag {
-      font-size: 0.7rem; font-family: var(--mono);
-      color: var(--ink-light); background: var(--paper);
-      padding: 0.15rem 0.5rem; border-radius: 2px;
-      border: 1px solid var(--border);
-    }
-    .project-footer {
-      padding: 0.8rem 1.4rem;
-      border-top: 1px solid var(--border);
-      display: flex; gap: 1rem;
-    }
-    .project-link {
-      font-size: 0.8rem; font-weight: 500; color: var(--teal);
-      display: flex; align-items: center; gap: 0.3rem;
-    }
+/* ── EXPERIENCE ── */
+.exp-list { display: flex; flex-direction: column; }
+.exp-item { display: grid; grid-template-columns: 150px 1fr; gap: 24px; padding: 22px 0; border-bottom: 1px solid var(--border); }
+.exp-item:last-child { border-bottom: none; }
+.exp-date { font-family: var(--mono); font-size: 11px; color: var(--ink3); line-height: 1.5; padding-top: 2px; }
+.exp-org { font-size: 11px; font-weight: 500; color: var(--teal); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 3px; font-family: var(--mono); }
+.exp-role { font-size: 15px; font-weight: 500; margin-bottom: 5px; }
+.exp-desc { font-size: 13px; color: var(--ink3); line-height: 1.6; }
 
-    /* ── Experience Timeline ───────────────────────────────────────────── */
-    .timeline { position: relative; padding-left: 2rem; }
-    .timeline::before {
-      content: ''; position: absolute; left: 0; top: 8px; bottom: 8px;
-      width: 1px; background: var(--border);
-    }
-    .timeline-item { position: relative; margin-bottom: 2.5rem; }
-    .timeline-item::before {
-      content: ''; position: absolute; left: -2.375rem; top: 8px;
-      width: 10px; height: 10px; border-radius: 50%;
-      background: var(--teal); border: 2px solid var(--paper);
-      box-shadow: 0 0 0 2px var(--teal);
-    }
-    .timeline-period {
-      font-family: var(--mono); font-size: 0.76rem;
-      color: var(--teal); margin-bottom: 0.2rem;
-      letter-spacing: 0.06em;
-    }
-    .timeline-role { font-family: var(--serif); font-size: 1.1rem; color: var(--ink); }
-    .timeline-org  { font-size: 0.88rem; color: var(--ink-light); font-weight: 500; margin-bottom: 0.5rem; }
-    .timeline-body { font-size: 0.88rem; color: var(--ink-light); }
+/* ── TEACHING ── */
+.teaching-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.teaching-card { background: var(--white); border-radius: var(--r); border: 1px solid var(--border); padding: 20px 24px; }
+.teaching-inst { font-family: var(--mono); font-size: 10px; color: var(--teal); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 500; margin-bottom: 6px; }
+.teaching-role { font-size: 14px; font-weight: 600; margin-bottom: 12px; }
+.teaching-list { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+.teaching-list li { font-size: 12px; color: var(--ink3); display: flex; align-items: center; gap: 8px; }
+.teaching-list li::before { content: ''; display: block; width: 4px; height: 4px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
 
-    /* ── Book ──────────────────────────────────────────────────────────── */
-    .book-card {
-      background: #fff; border: 1px solid var(--border);
-      border-radius: 8px; padding: 2.5rem;
-      display: grid; grid-template-columns: 160px 1fr;
-      gap: 2.5rem; align-items: center;
-      box-shadow: var(--shadow);
-    }
-    .book-cover {
-      width: 160px; height: 210px;
-      background: linear-gradient(160deg, #0d7c6e 0%, #0a4f45 50%, #063330 100%);
-      border-radius: 4px 10px 10px 4px;
-      box-shadow: -6px 6px 20px rgba(0,0,0,0.25), inset -3px 0 8px rgba(0,0,0,0.2);
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      padding: 1rem; text-align: center; position: relative; overflow: hidden;
-    }
-    .book-cover::before {
-      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
-      width: 12px; background: rgba(0,0,0,0.25);
-    }
-    .book-cover-title {
-      font-family: var(--serif); font-size: 0.78rem;
-      color: #fff; line-height: 1.3; margin-top: 0.5rem; z-index:1;
-    }
-    .book-cover-icon { font-size: 2rem; z-index: 1; }
-    .book-cover-author { font-size: 0.65rem; color: rgba(255,255,255,0.7); margin-top: 0.5rem; z-index:1; }
-    .book-title  { font-family: var(--serif); font-size: 1.5rem; color: var(--ink); margin-bottom: 0.4rem; }
-    .book-author { font-size: 0.9rem; color: var(--teal); font-weight: 500; margin-bottom: 1rem; }
-    .book-desc   { font-size: 0.9rem; color: var(--ink-light); margin-bottom: 1.5rem; line-height: 1.8; }
-    .book-chips  { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-    .book-chip {
-      font-size: 0.76rem; padding: 0.3rem 0.8rem;
-      border-radius: 20px; background: var(--teal-light); color: var(--teal);
-    }
+/* ── SKILLS ── */
+.skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.skill-group-title { font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--teal); margin-bottom: 12px; font-weight: 500; }
+.skill-item { font-size: 13px; color: var(--ink2); padding: 5px 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 7px; }
+.skill-item::before { content: ''; display: block; width: 4px; height: 4px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
 
-    /* ── Skills ────────────────────────────────────────────────────────── */
-    .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
-    .skill-group {
-      background: #fff; border: 1px solid var(--border);
-      border-radius: 6px; padding: 1.4rem;
-    }
-    .skill-group-title {
-      font-family: var(--mono); font-size: 0.76rem;
-      color: var(--teal); text-transform: uppercase;
-      letter-spacing: 0.1em; margin-bottom: 1rem;
-      padding-bottom: 0.6rem; border-bottom: 1px solid var(--border);
-    }
-    .skill-list { list-style: none; }
-    .skill-list li {
-      font-size: 0.86rem; color: var(--ink-light);
-      padding: 0.3rem 0; border-bottom: 1px dashed var(--border);
-      display: flex; align-items: center; gap: 0.5rem;
-    }
-    .skill-list li:last-child { border-bottom: none; }
-    .skill-list li::before { content: '▸'; color: var(--teal); font-size: 0.7rem; }
+/* ── CONTACT ── */
+.contact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.contact-item { background: var(--white); border-radius: var(--r); border: 1px solid var(--border); padding: 18px 20px; text-decoration: none; transition: all 0.2s; display: flex; flex-direction: column; gap: 5px; }
+.contact-item:hover { border-color: var(--teal); }
+.contact-type { font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--teal); font-weight: 500; }
+.contact-val { font-size: 13px; color: var(--ink); font-weight: 500; }
+.contact-val-sm { font-size: 11px; color: var(--ink3); }
 
-    /* ── Teaching ──────────────────────────────────────────────────────── */
-    .teaching-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-    .teaching-card {
-      background: #fff; border: 1px solid var(--border);
-      border-radius: 6px; padding: 1.4rem;
-    }
-    .teaching-inst { font-family: var(--serif); font-size: 1.05rem; color: var(--ink); margin-bottom: 0.3rem; }
-    .teaching-role { font-size: 0.82rem; color: var(--teal); font-weight: 500; margin-bottom: 0.8rem; }
-    .course-list { list-style: none; }
-    .course-list li {
-      font-size: 0.82rem; color: var(--ink-light);
-      padding: 0.2rem 0; padding-left: 0.9rem;
-      position: relative;
-    }
-    .course-list li::before {
-      content: '—'; position: absolute; left: 0;
-      color: var(--border);
-    }
+/* ── FOOTER ── */
+footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex; align-items: center; justify-content: space-between; margin-top: 80px; }
+.footer-text { font-family: var(--mono); font-size: 11px; color: var(--ink3); }
 
-    /* ── Contact / Footer ──────────────────────────────────────────────── */
-    #contact {
-      background: var(--ink); color: #fff;
-    }
-    #contact .section-label { color: var(--teal-light); }
-    #contact .section-title { color: #fff; }
-    #contact .section-sub   { color: rgba(255,255,255,0.6); }
-    #contact p { color: rgba(255,255,255,0.7); }
-    .contact-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 3rem; align-items: start;
-    }
-    .contact-item {
-      display: flex; align-items: center; gap: 1rem;
-      margin-bottom: 1.2rem;
-    }
-    .contact-icon {
-      width: 42px; height: 42px; border-radius: var(--radius);
-      background: rgba(255,255,255,0.08);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem; flex-shrink: 0;
-    }
-    .contact-detail a { color: rgba(255,255,255,0.8); font-size: 0.9rem; }
-    .contact-detail a:hover { color: #fff; }
-    .contact-detail span { display: block; font-size: 0.72rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.2rem; }
-
-    footer {
-      background: #080e14; padding: 1.5rem 2rem;
-      text-align: center; font-size: 0.78rem;
-      color: rgba(255,255,255,0.3); font-family: var(--mono);
-    }
-
-    /* ── Animations ────────────────────────────────────────────────────── */
-    @keyframes fadeUp {
-      from { opacity:0; transform:translateY(24px); }
-      to   { opacity:1; transform:translateY(0); }
-    }
-    .fade-up { animation: fadeUp 0.6s ease both; }
-    .delay-1 { animation-delay: 0.1s; }
-    .delay-2 { animation-delay: 0.2s; }
-    .delay-3 { animation-delay: 0.3s; }
-    .delay-4 { animation-delay: 0.4s; }
-
-    /* ── Responsive ────────────────────────────────────────────────────── */
-    @media (max-width: 900px) {
-      #hero { grid-template-columns: 1fr; }
-      .hero-card { display: none; }
-      .projects-grid { grid-template-columns: 1fr 1fr; }
-      .patents-grid  { grid-template-columns: 1fr; }
-      .skills-grid   { grid-template-columns: 1fr 1fr; }
-      .teaching-grid { grid-template-columns: 1fr; }
-      .book-card { grid-template-columns: 1fr; }
-      .book-cover { width: 120px; height: 160px; }
-      .contact-grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 600px) {
-      .nav-links { display: none; }
-      .projects-grid { grid-template-columns: 1fr; }
-      .skills-grid   { grid-template-columns: 1fr; }
-    }
-  </style>
+/* ── RESPONSIVE ── */
+@media(max-width: 820px) {
+  nav { padding: 14px 20px; }
+  nav .nav-links { display: none; }
+  .hero { grid-template-columns: 1fr; padding: 48px 20px; }
+  .stats-row { grid-template-columns: repeat(2, 1fr); }
+  .page { padding: 0 20px 60px; }
+  .proj-grid, .github-grid { grid-template-columns: 1fr 1fr; }
+  .skills-grid { grid-template-columns: 1fr 1fr; }
+  .contact-grid { grid-template-columns: 1fr 1fr; }
+  .exp-item { grid-template-columns: 1fr; gap: 4px; }
+  .patent-grid { grid-template-columns: 1fr; }
+  .teaching-grid { grid-template-columns: 1fr; }
+  footer { flex-direction: column; gap: 10px; padding: 20px; text-align: center; }
+}
+@media(max-width: 540px) {
+  .proj-grid, .github-grid { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: 1fr 1fr; }
+  .contact-grid { grid-template-columns: 1fr 1fr; }
+  .book-card { grid-template-columns: 1fr; }
+  .pub-item { grid-template-columns: 1fr; }
+  .pub-num { display: none; }
+  .pub-award { align-self: start; }
+}
+</style>
 </head>
 <body>
 
-<!-- ── Navigation ──────────────────────────────────────────────────────── -->
+<!-- NAV -->
 <nav>
-  <div class="nav-inner">
-    <span class="nav-logo">Pragati Dharmale</span>
-    <ul class="nav-links">
-      <li><a href="#research">Research</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#book">Book</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#teaching">Teaching</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
+  <span class="nav-logo">Pragati Dharmale</span>
+  <ul class="nav-links">
+    <li><a href="#research">Research</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#book">Book</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#teaching">Teaching</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </nav>
 
-<!-- ── Hero ────────────────────────────────────────────────────────────── -->
-<section id="hero">
+<!-- HERO -->
+<section class="hero">
   <div>
-    <div class="hero-eyebrow fade-up">San Jose, California</div>
-    <h1 class="hero-name fade-up delay-1">Pragati<br><em>Dharmale</em></h1>
-    <p class="hero-title fade-up delay-2">
-      AI/ML Researcher · IEEE Author · CS Educator<br>
-      Bridging research and real-world learning since 2003
-    </p>
-    <div class="hero-badges fade-up delay-3">
-      <span class="badge badge-teal">🔬 IEEE Author</span>
-      <span class="badge badge-gold">📖 Published Book</span>
-      <span class="badge badge-teal">⚗️ 2 Patents</span>
-      <span class="badge badge-ink">🎓 5 Institutions</span>
-      <span class="badge badge-ink">🧠 EEG & Deep Learning</span>
+    <div class="hero-eyebrow">AI/ML Researcher · IEEE Author · CS Educator</div>
+    <h1 class="hero-name">Pragati<br><em>Dharmale</em></h1>
+    <p class="hero-desc">Bridging cutting-edge AI research and real-world learning across EEG/ECG signal processing, deep learning, and computer science education since 2003.</p>
+    <div class="hero-pills">
+      <span class="pill pill-teal">🔬 IEEE Author</span>
+      <span class="pill pill-teal">⚗️ 2 Patents</span>
+      <span class="pill">📖 Published Book</span>
+      <span class="pill">🎓 5 Institutions</span>
+      <span class="pill">🧠 EEG &amp; Deep Learning</span>
     </div>
-    <div class="hero-cta fade-up delay-4">
-      <a href="https://www.linkedin.com/in/pragatidharmale-80ab2037" target="_blank" class="btn btn-primary">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        LinkedIn
-      </a>
-      <a href="https://github.com/pragatiusstudies" target="_blank" class="btn btn-outline">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-        GitHub
-      </a>
-      <a href="mailto:pragatiusstudies@gmail.com" class="btn btn-outline">✉ Email</a>
+    <div class="hero-links">
+      <a href="mailto:pragatiusstudies@gmail.com" class="btn btn-primary">Get in touch</a>
+      <a href="https://scholar.google.com/citations?user=nw7-hzwAAAAJ&hl=en" class="btn btn-outline" target="_blank" rel="noopener">Google Scholar →</a>
     </div>
   </div>
-
-  <!-- Card -->
-  <div class="hero-card fade-up delay-2">
-    <div class="profile-avatar">PD</div>
-    <div class="card-name">Pragati Dharmale</div>
-    <div class="card-role">CIS Faculty · Researcher · Author</div>
-    <div class="card-stats">
-      <div class="stat"><div class="stat-num">5+</div><div class="stat-label">IEEE Papers</div></div>
-      <div class="stat"><div class="stat-num">2</div><div class="stat-label">Patents</div></div>
-      <div class="stat"><div class="stat-num">20+</div><div class="stat-label">Years Teaching</div></div>
-      <div class="stat"><div class="stat-num">1</div><div class="stat-label">Book</div></div>
-    </div>
-    <div class="card-links">
-      <a href="https://www.linkedin.com/in/pragatidharmale-80ab2037" target="_blank" class="card-link">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        linkedin.com/in/pragatidharmale-80ab2037
-      </a>
-      <a href="https://github.com/pragatiusstudies" target="_blank" class="card-link">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-        github.com/pragatiusstudies
-      </a>
-      <a href="mailto:pragatiusstudies@gmail.com" class="card-link">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        pragatiusstudies@gmail.com
-      </a>
-      <a href="#" class="card-link">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z"/></svg>
-        San Jose, California, USA
-      </a>
+  <div>
+    <div class="hero-card">
+      <div class="avatar">PD</div>
+      <h3>Pragati Dharmale</h3>
+      <div class="role">CIS Faculty · Researcher · Author</div>
+      <div class="stats-row">
+        <div class="stat"><div class="stat-n">5</div><div class="stat-l">IEEE Papers</div></div>
+        <div class="stat"><div class="stat-n">2</div><div class="stat-l">Patents</div></div>
+        <div class="stat"><div class="stat-n">20+</div><div class="stat-l">Yrs Teaching</div></div>
+        <div class="stat"><div class="stat-n">5</div><div class="stat-l">Institutions</div></div>
+      </div>
+      <div class="card-links">
+        <a href="https://www.linkedin.com/in/pragatidharmale-80ab2037" class="card-link" target="_blank" rel="noopener"><span class="card-link-dot"></span>linkedin.com/in/pragatidharmale</a>
+        <a href="https://github.com/pragatiusstudies" class="card-link" target="_blank" rel="noopener"><span class="card-link-dot"></span>github.com/pragatiusstudies</a>
+        <a href="mailto:pragatiusstudies@gmail.com" class="card-link"><span class="card-link-dot"></span>pragatiusstudies@gmail.com</a>
+        <a href="https://sites.google.com/asdrp.org/dharmale/home" class="card-link" target="_blank" rel="noopener"><span class="card-link-dot"></span>Pragati Group @ ASDRP</a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ── Research & Publications ──────────────────────────────────────────── -->
-<section id="research" class="section">
-  <div class="container">
-    <p class="section-label">Peer-Reviewed Work</p>
-    <h2 class="section-title">Research & Publications</h2>
-    <div class="divider"></div>
+<div class="page">
 
-    <div class="papers-grid">
-
-      <div class="paper-card">
-        <div class="paper-num">01</div>
-        <div>
-          <div class="paper-title">Automated Recognition of Autism Spectrum Disorder from EEG Signals Using a CNN-LSTM Hybrid Model</div>
-          <div class="paper-meta">IEEE Conference Publication · EEG Signal Processing · Deep Learning</div>
-          <div class="paper-tags">
-            <span class="tag tag-ieee">IEEE</span>
-            <span class="tag tag-eeg">EEG</span>
-            <span class="tag tag-ml">CNN-LSTM</span>
-            <span class="tag tag-ml">Biomedical AI</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="paper-card">
-        <div class="paper-num">02</div>
-        <div>
-          <div class="paper-title">Promising Applications of AI in Promoting Student Success</div>
-          <div class="paper-meta">IEEE Publication · Education Technology · Applied AI</div>
-          <div class="paper-tags">
-            <span class="tag tag-ieee">IEEE</span>
-            <span class="tag tag-edu">EdTech</span>
-            <span class="tag tag-ml">Applied AI</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="paper-card">
-        <div class="paper-num">03</div>
-        <div>
-          <div class="paper-title">Accelerated SWT-Based EEG Denoising Technique to Correct the Ocular Artifact</div>
-          <div class="paper-meta">IEEE Publication · Signal Processing · Wavelet Transform</div>
-          <div class="paper-tags">
-            <span class="tag tag-ieee">IEEE</span>
-            <span class="tag tag-eeg">EEG</span>
-            <span class="tag tag-ml">Signal Processing</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="paper-card">
-        <div class="paper-num">04</div>
-        <div>
-          <div class="paper-title">Low Power Logic Design Schemes</div>
-          <div class="paper-meta">IEEE Publication · Digital Design · VLSI</div>
-          <div class="paper-tags">
-            <span class="tag tag-ieee">IEEE</span>
-            <span class="tag tag-ml">Low Power Design</span>
-            <span class="tag tag-ml">VLSI</span>
-          </div>
-        </div>
-      </div>
-
+  <!-- RESEARCH & PUBLICATIONS -->
+  <section class="section" id="research">
+    <div class="sec-header">
+      <span class="sec-label">01</span>
+      <h2 class="sec-title">Research &amp; Publications</h2>
     </div>
-  </div>
-</section>
 
-<!-- ── Patents ──────────────────────────────────────────────────────────── -->
-<section id="patents" class="section">
-  <div class="container">
-    <p class="section-label">Intellectual Property</p>
-    <h2 class="section-title">Patents</h2>
-    <div class="divider"></div>
+    <div class="pub-tabs">
+      <button class="pub-tab active" onclick="showPubs('ieee', this)">IEEE <span class="tab-cnt">5</span></button>
+      <button class="pub-tab" onclick="showPubs('sccur', this)">SCCUR <span class="tab-cnt">4</span></button>
+    </div>
 
-    <div class="patents-grid">
+    <!-- IEEE -->
+    <div class="pub-panel" id="pubs-ieee">
+      <div class="pub-item">
+        <span class="pub-num">01</span>
+        <div>
+          <div class="pub-venue-badge">IEEE CCWC 2026</div>
+          <div class="pub-title">Hybrid AI for Clinical Prediction: Combining LLM-Derived Features with ML for Explainable Diabetes Risk Assessment</div>
+          <div class="pub-meta">IEEE Conference on Computing and Communication Workshops · 2026</div>
+          <div class="tags">
+            <span class="tag tag-ieee">IEEE</span>
+            <span class="tag tag-ai">LLM</span>
+            <span class="tag tag-ai">XAI</span>
+            <span class="tag tag-default">Clinical AI</span>
+          </div>
+        </div>
+        <div class="pub-award">Best Session Award</div>
+      </div>
+      <div class="pub-item">
+        <span class="pub-num">02</span>
+        <div>
+          <div class="pub-venue-badge">ICCE 2025</div>
+          <div class="pub-title">Exploration of New Models to Enhance Treadmill Usage and Analyze Optimal Use Cases for All Age Groups</div>
+          <div class="pub-meta">IEEE International Conference on Consumer Electronics · 2025</div>
+          <div class="tags">
+            <span class="tag tag-ieee">IEEE</span>
+            <span class="tag tag-ai">Behavioral AI</span>
+            <span class="tag tag-default">Health Tech</span>
+          </div>
+        </div>
+        <div class="pub-award">Best Session Award</div>
+      </div>
+      <div class="pub-item">
+        <span class="pub-num">03</span>
+        <div>
+          <div class="pub-venue-badge">ICCE 2025</div>
+          <div class="pub-title">Enhancing Human-Computer Interaction: An Accurate Video-Based American Sign Language Translation Model Using Machine Learning Techniques</div>
+          <div class="pub-meta">IEEE International Conference on Consumer Electronics · 2025</div>
+          <div class="tags">
+            <span class="tag tag-ieee">IEEE</span>
+            <span class="tag tag-ai">HCI</span>
+            <span class="tag tag-ai">Computer Vision</span>
+          </div>
+        </div>
+        <div class="pub-award">Best Session Award</div>
+      </div>
+      <div class="pub-item">
+        <span class="pub-num">04</span>
+        <div>
+          <div class="pub-venue-badge">ICCE 2025</div>
+          <div class="pub-title">Automated Recognition of Autism Spectrum Disorder from EEG Signals Using a CNN-LSTM Hybrid Model</div>
+          <div class="pub-meta">IEEE International Conference on Consumer Electronics · 2025</div>
+          <div class="tags">
+            <span class="tag tag-ieee">IEEE</span>
+            <span class="tag tag-signal">EEG</span>
+            <span class="tag tag-signal">CNN-LSTM</span>
+            <span class="tag tag-default">Biomedical AI</span>
+          </div>
+        </div>
+        <div class="pub-award">Best Session Award</div>
+      </div>
+      <div class="pub-item">
+        <span class="pub-num">05</span>
+        <div>
+          <div class="pub-venue-badge">ICCE 2024</div>
+          <div class="pub-title">Enhancing Autism Spectrum Disorder Recognition in EEG Data Through Filtering-Driven CNN Approach</div>
+          <div class="pub-meta">IEEE International Conference on Consumer Electronics · 2024</div>
+          <div class="tags">
+            <span class="tag tag-ieee">IEEE</span>
+            <span class="tag tag-signal">EEG</span>
+            <span class="tag tag-signal">CNN</span>
+            <span class="tag tag-default">Biomedical AI</span>
+          </div>
+        </div>
+        <div class="pub-award">Best Session Award</div>
+      </div>
+    </div>
+
+    <!-- SCCUR -->
+    <div class="pub-panel" id="pubs-sccur" style="display:none">
+      <div class="sccur-note">Southern California Conference for Undergraduate Research (SCCUR) — annual undergraduate symposium hosted at Cal State Fullerton.</div>
+      <div class="pub-item">
+        <span class="pub-num">01</span>
+        <div>
+          <div class="pub-venue-badge">SCCUR 2025</div>
+          <div class="pub-title">EEG-Based Epileptic Seizure Detection with Python and Machine Learning</div>
+          <div class="pub-meta">Southern California Conference for Undergraduate Research · 2025</div>
+          <div class="tags">
+            <span class="tag tag-signal">EEG</span>
+            <span class="tag tag-ai">Python</span>
+            <span class="tag tag-default">ML</span>
+          </div>
+        </div>
+      </div>
+      <div class="pub-item">
+        <span class="pub-num">02</span>
+        <div>
+          <div class="pub-venue-badge">SCCUR 2024</div>
+          <div class="pub-title">Classification of Autism Spectrum Disorder from EEG Signals Using a CNN-LSTM Hybrid Model</div>
+          <div class="pub-meta">Southern California Conference for Undergraduate Research · 2024</div>
+          <div class="tags">
+            <span class="tag tag-signal">EEG</span>
+            <span class="tag tag-signal">CNN-LSTM</span>
+            <span class="tag tag-default">ASD</span>
+          </div>
+        </div>
+      </div>
+      <div class="pub-item">
+        <span class="pub-num">03</span>
+        <div>
+          <div class="pub-venue-badge">SCCUR 2024</div>
+          <div class="pub-title">Innovative Models for Enhancing Treadmill Efficiency and Identifying Optimal Use Cases Across Diverse Age Groups</div>
+          <div class="pub-meta">Southern California Conference for Undergraduate Research · 2024</div>
+          <div class="tags">
+            <span class="tag tag-ai">Behavioral AI</span>
+            <span class="tag tag-default">Health Tech</span>
+          </div>
+        </div>
+      </div>
+      <div class="pub-item">
+        <span class="pub-num">04</span>
+        <div>
+          <div class="pub-venue-badge">SCCUR 2023</div>
+          <div class="pub-title">A System for Dynamic Hand Gesture Recognition Using Multiple Deep Learning Architectures</div>
+          <div class="pub-meta">Southern California Conference for Undergraduate Research · 2023</div>
+          <div class="tags">
+            <span class="tag tag-ai">Computer Vision</span>
+            <span class="tag tag-ai">Deep Learning</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTIVE RESEARCH PROJECTS -->
+  <section class="section" id="projects">
+    <div class="sec-header">
+      <span class="sec-label">02</span>
+      <h2 class="sec-title">Projects &amp; Open Source</h2>
+    </div>
+
+    <!-- FEATURED -->
+    <div class="feat-wrap">
+      <div class="feat-card">
+        <div>
+          <div class="feat-badge"><span class="feat-dot"></span> Featured Open Source</div>
+          <div class="feat-title">AI Social Media Post Generator</div>
+          <div class="feat-desc">Enter one topic — get fully crafted, platform-optimised posts for LinkedIn, Instagram, Facebook, and X/Twitter, each with an AI-generated image. Powered by an n8n automation workflow orchestrating GPT-4 for copy and DALL·E for visuals. Ships with a quickstart guide, demo page, and topics explorer so anyone can deploy it in minutes.</div>
+          <div class="feat-stack">
+            <span class="feat-tag feat-tag-hi">n8n Workflow</span>
+            <span class="feat-tag feat-tag-hi">OpenAI GPT-4</span>
+            <span class="feat-tag feat-tag-hi">DALL·E</span>
+            <span class="feat-tag">LinkedIn</span>
+            <span class="feat-tag">Instagram</span>
+            <span class="feat-tag">X / Twitter</span>
+            <span class="feat-tag">Facebook</span>
+            <span class="feat-tag">AI Automation</span>
+          </div>
+          <div class="feat-actions">
+            <a href="https://github.com/pragatiusstudies/ai-social-media-generator" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:13px">View on GitHub →</a>
+            <a href="https://github.com/pragatiusstudies/ai-social-media-generator/blob/master/QUICKSTART.md" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:13px">Quickstart Guide</a>
+          </div>
+        </div>
+        <div class="feat-side">
+          <div class="feat-stat">
+            <div class="feat-stat-icon">🤖</div>
+            <div><div class="feat-stat-label">Engine</div><div class="feat-stat-val">GPT-4 + DALL·E</div></div>
+          </div>
+          <div class="feat-stat">
+            <div class="feat-stat-icon">⚡</div>
+            <div><div class="feat-stat-label">Automation</div><div class="feat-stat-val">n8n Workflow</div></div>
+          </div>
+          <div class="feat-stat">
+            <div class="feat-stat-icon">📱</div>
+            <div><div class="feat-stat-label">Platforms</div><div class="feat-stat-val">4 Social Networks</div></div>
+          </div>
+          <div class="feat-stat">
+            <div class="feat-stat-icon">⭐</div>
+            <div><div class="feat-stat-label">GitHub Stars</div><div class="feat-stat-val">2 · MIT License</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <div class="proj-status status-active">● Active</div>
+        <div class="proj-title">EEG Signal Analysis for Epileptic Seizure Detection</div>
+        <div class="proj-desc">Python-based ML pipeline for automated seizure pattern recognition using hybrid CNN-LSTM deep learning models on EEG data.</div>
+        <div class="proj-tags"><span class="proj-tag">EEG</span><span class="proj-tag">Python</span><span class="proj-tag">CNN-LSTM</span></div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-status status-active">● Active</div>
+        <div class="proj-title">ECG Signal Analysis for Arrhythmia Detection</div>
+        <div class="proj-desc">Deep learning pipeline using RNN and CNN architectures for automated cardiac arrhythmia classification from ECG signal data.</div>
+        <div class="proj-tags"><span class="proj-tag">ECG</span><span class="proj-tag">RNN</span><span class="proj-tag">CNN</span><span class="proj-tag">Biomedical AI</span></div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-status status-active">● Active</div>
+        <div class="proj-title">Diabetes Risk Prediction</div>
+        <div class="proj-desc">Hybrid LLM + ML explainable AI framework for clinical diabetes risk assessment with SHAP-based interpretability. IEEE CCWC 2026 — Best Session Award.</div>
+        <div class="proj-tags"><span class="proj-tag">XAI</span><span class="proj-tag">LLM</span><span class="proj-tag">SHAP</span></div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-status status-active">● Active — GitHub</div>
+        <div class="proj-title">AI Social Media Post Generator</div>
+        <div class="proj-desc">n8n + GPT-4 automation that generates platform-tailored posts for LinkedIn, Instagram, Facebook, and X/Twitter with AI images from a single topic input.</div>
+        <div class="proj-tags" style="margin-bottom:10px"><span class="proj-tag">n8n</span><span class="proj-tag">GPT-4</span><span class="proj-tag">DALL·E</span><span class="proj-tag">AI Automation</span></div>
+        <a href="https://github.com/pragatiusstudies/ai-social-media-generator" target="_blank" rel="noopener" style="font-size:11px;font-family:var(--mono);color:var(--teal);font-weight:500;">View on GitHub →</a>
+      </div>
+      <div class="proj-card">
+        <div class="proj-status status-active">● Active — GitHub</div>
+        <div class="proj-title">Student Grade Predictor</div>
+        <div class="proj-desc">ML model predicting student grades using 7 academic features with SHAP explainability to help educators identify at-risk students early.</div>
+        <div class="proj-tags"><span class="proj-tag">scikit-learn</span><span class="proj-tag">SHAP</span><span class="proj-tag">Streamlit</span></div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-status status-active">● Active — GitHub</div>
+        <div class="proj-title">Python Concept Tutor Chatbot</div>
+        <div class="proj-desc">AI-powered Python tutor using open-source LLMs via HuggingFace. 24 structured topics, quiz engine, and learning path tracker.</div>
+        <div class="proj-tags"><span class="proj-tag">HuggingFace</span><span class="proj-tag">Mistral 7B</span><span class="proj-tag">LLM</span></div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-status status-active">● Active — GitHub</div>
+        <div class="proj-title">ML Algorithm Visual Explorer</div>
+        <div class="proj-desc">Interactive visualization of 6 ML algorithms with adjustable parameters and step-by-step breakdowns for learners.</div>
+        <div class="proj-tags"><span class="proj-tag">scikit-learn</span><span class="proj-tag">Matplotlib</span><span class="proj-tag">Streamlit</span></div>
+      </div>
+    </div>
+    <div style="margin-top:16px;text-align:right">
+      <a href="https://github.com/pragatiusstudies" class="btn btn-outline" target="_blank" rel="noopener" style="font-size:13px">View All Repositories on GitHub →</a>
+    </div>
+  </section>
+
+  <!-- PATENTS -->
+  <section class="section">
+    <div class="sec-header">
+      <span class="sec-label">03</span>
+      <h2 class="sec-title">Patents</h2>
+    </div>
+    <div class="patent-grid">
       <div class="patent-card">
         <div class="patent-icon">📷</div>
-        <div class="patent-title">IoT Based Camera for Healthcare Management</div>
-        <p class="patent-desc">An IoT-integrated camera system designed for intelligent healthcare monitoring and management, enabling real-time patient observation and automated health data capture.</p>
+        <div>
+          <div class="patent-title">IoT Based Camera for Healthcare Management</div>
+          <div class="patent-desc">An IoT-integrated camera system for intelligent healthcare monitoring, enabling real-time patient observation and automated health data capture.</div>
+        </div>
       </div>
       <div class="patent-card">
         <div class="patent-icon">🧠</div>
-        <div class="patent-title">System and Method for Multimodal Attention Analysis Using EEG Signals and Adaptive Deep Learning Framework</div>
-        <p class="patent-desc">A novel framework combining EEG signal processing with adaptive deep learning to analyze and quantify attention states through multimodal neural data.</p>
+        <div>
+          <div class="patent-title">System and Method for Multimodal Attention Analysis Using EEG Signals and Adaptive Deep Learning Framework</div>
+          <div class="patent-desc">A novel framework combining EEG signal processing with adaptive deep learning to analyze and quantify attention states through multimodal neural data.</div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ── GitHub Projects ──────────────────────────────────────────────────── -->
-<section id="projects" class="section">
-  <div class="container">
-    <p class="section-label">Open Source</p>
-    <h2 class="section-title">GitHub Projects</h2>
-    <div class="divider"></div>
-
-    <div class="projects-grid">
-
-      <div class="project-card">
-        <div class="project-header">
-          <span class="project-icon">🎓</span>
-          <span class="project-lang">Python</span>
-        </div>
-        <div class="project-body">
-          <div class="project-title">Student Grade Predictor</div>
-          <p class="project-desc">ML model that predicts student grades using 7 academic features. Integrates SHAP explainability to help educators identify at-risk students early.</p>
-          <div class="project-tech">
-            <span class="tech-tag">scikit-learn</span>
-            <span class="tech-tag">SHAP</span>
-            <span class="tech-tag">Streamlit</span>
-            <span class="tech-tag">Gradient Boosting</span>
-          </div>
-        </div>
-        <div class="project-footer">
-          <a href="https://github.com/pragatiusstudies/student-grade-predictor" target="_blank" class="project-link">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            View on GitHub
-          </a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-header">
-          <span class="project-icon">🐍</span>
-          <span class="project-lang">Python</span>
-        </div>
-        <div class="project-body">
-          <div class="project-title">Python Concept Tutor Chatbot</div>
-          <p class="project-desc">AI-powered Python tutor using free open-source LLMs via HuggingFace. Features 24 structured topics, quiz engine, and learning path tracker.</p>
-          <div class="project-tech">
-            <span class="tech-tag">HuggingFace</span>
-            <span class="tech-tag">Mistral 7B</span>
-            <span class="tech-tag">Streamlit</span>
-            <span class="tech-tag">LLM</span>
-          </div>
-        </div>
-        <div class="project-footer">
-          <a href="https://github.com/pragatiusstudies/python-tutor-chatbot" target="_blank" class="project-link">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            View on GitHub
-          </a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-header">
-          <span class="project-icon">🔭</span>
-          <span class="project-lang">Python</span>
-        </div>
-        <div class="project-body">
-          <div class="project-title">ML Algorithm Visual Explorer</div>
-          <p class="project-desc">Interactive visualization of 6 ML algorithms with adjustable parameters. Step-by-step breakdowns of Linear Regression, KMeans, Decision Tree, SVM, KNN & Logistic Regression.</p>
-          <div class="project-tech">
-            <span class="tech-tag">scikit-learn</span>
-            <span class="tech-tag">Matplotlib</span>
-            <span class="tech-tag">Streamlit</span>
-            <span class="tech-tag">Interactive</span>
-          </div>
-        </div>
-        <div class="project-footer">
-          <a href="https://github.com/pragatiusstudies/ml-visual-explorer" target="_blank" class="project-link">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            View on GitHub
-          </a>
-        </div>
-      </div>
-
+  <!-- BOOK -->
+  <section class="section" id="book">
+    <div class="sec-header">
+      <span class="sec-label">04</span>
+      <h2 class="sec-title">Book</h2>
     </div>
-
-    <div style="margin-top:2rem; text-align:center;">
-      <a href="https://github.com/pragatiusstudies" target="_blank" class="btn btn-outline">
-        View All Repositories on GitHub →
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ── Book ─────────────────────────────────────────────────────────────── -->
-<section id="book" class="section">
-  <div class="container">
-    <p class="section-label">Academic Publication</p>
-    <h2 class="section-title">Book</h2>
-    <div class="divider"></div>
-
     <div class="book-card">
-      <div class="book-cover">
-        <div class="book-cover-icon">🗄️</div>
-        <div class="book-cover-title">Database Architecture and Implementation</div>
-        <div class="book-cover-author">Pragati Dharmale</div>
-      </div>
+      <div class="book-cover">DATABASE ARCHITECTURE &amp; IMPLEMENTATION</div>
       <div>
-        <h3 class="book-title">Database Architecture and Implementation: From Modeling to Performance Tuning</h3>
+        <div class="book-title">Database Architecture and Implementation: From Modeling to Performance Tuning</div>
         <div class="book-author">by Pragati Dharmale</div>
-        <p class="book-desc">
-          A comprehensive academic framework covering the full lifecycle of database systems — from conceptual and logical modeling through physical architecture to performance optimization. This work is widely used in both academic and professional settings, providing practitioners with tools for database design, normalization, query optimization, and performance engineering.
-        </p>
-        <div class="book-chips">
-          <span class="book-chip">Database Design</span>
-          <span class="book-chip">SQL</span>
-          <span class="book-chip">Performance Tuning</span>
-          <span class="book-chip">Data Modeling</span>
-          <span class="book-chip">Architecture</span>
+        <div class="book-desc">A comprehensive academic framework covering the full lifecycle of database systems — from conceptual and logical modeling through physical architecture to performance optimization. Widely used in both academic and professional settings.</div>
+        <div class="tags" style="margin-top:14px">
+          <span class="tag tag-default">Database Design</span>
+          <span class="tag tag-default">SQL</span>
+          <span class="tag tag-default">Performance Tuning</span>
+          <span class="tag tag-default">Data Modeling</span>
+          <span class="tag tag-default">Architecture</span>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ── Experience ───────────────────────────────────────────────────────── -->
-<section id="experience" class="section">
-  <div class="container">
-    <p class="section-label">Career</p>
-    <h2 class="section-title">Experience</h2>
-    <div class="divider"></div>
-
-    <div class="timeline">
-
-      <div class="timeline-item">
-        <div class="timeline-period">Jul 2022 — Present</div>
-        <div class="timeline-role">CIS Faculty</div>
-        <div class="timeline-org">San Jose City College · San Jose, CA</div>
-        <p class="timeline-body">Teaching Python, AI, Databases, System Analysis, and Web Development with a focus on project-based, real-world learning.</p>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-period">Jun 2022 — Present</div>
-        <div class="timeline-role">Adjunct Professor</div>
-        <div class="timeline-org">San Francisco Bay University · Fremont, CA</div>
-        <p class="timeline-body">Teaching advanced CIS and AI courses at the university level.</p>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-period">Mar 2022 — Present</div>
-        <div class="timeline-role">Senior Research Advisor — ML, Deep Learning & Image Processing</div>
-        <div class="timeline-org">Aspiring Scholars Directed Research Program (ASDRP) · Fremont, CA</div>
-        <p class="timeline-body">Mentoring high-school and undergraduate scholars on AI research projects. Teams have produced multiple IEEE-published papers in healthcare, security, and automation domains.</p>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-period">Dec 2019 — Present</div>
-        <div class="timeline-role">Visiting Professor III</div>
-        <div class="timeline-org">DeVry University · San Jose, CA</div>
-        <p class="timeline-body">Courses include Python, C++, OOP, Software Engineering, System Analysis & Design, and Java-based Business Programming.</p>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-period">Apr 2019 — Jun 2022</div>
-        <div class="timeline-role">Coding Instructor</div>
-        <div class="timeline-org">De Anza College · Cupertino, CA</div>
-        <p class="timeline-body">Python, Java, JavaScript, Raspberry Pi, and STEM courses for middle school through college-level students.</p>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-period">May 2003 — Apr 2010</div>
-        <div class="timeline-role">Lecturer / Research Associate</div>
-        <div class="timeline-org">Sipna College of Engineering & Technology · Amravati, India</div>
-        <p class="timeline-body">7 years teaching IT, Digital Design, Computer Architecture, DSP (MATLAB/Simulink), and Microprocessors. Organized national conferences and developed university syllabi.</p>
-      </div>
-
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+    <div class="sec-header">
+      <span class="sec-label">05</span>
+      <h2 class="sec-title">Experience</h2>
     </div>
-  </div>
-</section>
+    <div class="exp-list">
+      <div class="exp-item">
+        <div class="exp-date">Jul 2022 — Present</div>
+        <div>
+          <div class="exp-org">San Jose City College</div>
+          <div class="exp-role">CIS Faculty</div>
+          <div class="exp-desc">Teaching Python, AI, Databases, System Analysis, and Web Development with a focus on project-based, real-world learning.</div>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-date">Jun 2022 — Present</div>
+        <div>
+          <div class="exp-org">SF Bay University · Fremont, CA</div>
+          <div class="exp-role">Adjunct Professor</div>
+          <div class="exp-desc">Teaching advanced CIS and AI courses at the university level.</div>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-date">Mar 2022 — Present</div>
+        <div>
+          <div class="exp-org">ASDRP · Fremont, CA</div>
+          <div class="exp-role">Senior Research Advisor — ML, Deep Learning &amp; Signal Processing</div>
+          <div class="exp-desc">Mentoring high-school and undergraduate scholars on AI research projects. Teams have produced multiple IEEE-published papers with Best Session Awards in healthcare, HCI, and biomedical AI domains.</div>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-date">Dec 2019 — Present</div>
+        <div>
+          <div class="exp-org">DeVry University</div>
+          <div class="exp-role">Visiting Professor III</div>
+          <div class="exp-desc">Python, C++, OOP, Software Engineering, System Analysis &amp; Design, and Java-based Business Programming.</div>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-date">Apr 2019 — Jun 2022</div>
+        <div>
+          <div class="exp-org">De Anza College · Cupertino, CA</div>
+          <div class="exp-role">Coding Instructor</div>
+          <div class="exp-desc">Python, Java, JavaScript, Raspberry Pi, and STEM courses for middle school through college-level students.</div>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-date">May 2003 — Apr 2010</div>
+        <div>
+          <div class="exp-org">Sipna College of Engineering · Amravati, India</div>
+          <div class="exp-role">Lecturer / Research Associate</div>
+          <div class="exp-desc">7 years teaching IT, Digital Design, Computer Architecture, DSP (MATLAB/Simulink), and Microprocessors. Organized national conferences and developed university syllabi.</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- ── Teaching ──────────────────────────────────────────────────────────── -->
-<section id="teaching" class="section">
-  <div class="container">
-    <p class="section-label">Classroom</p>
-    <h2 class="section-title">Courses Taught</h2>
-    <div class="divider"></div>
-
+  <!-- TEACHING -->
+  <section class="section" id="teaching">
+    <div class="sec-header">
+      <span class="sec-label">06</span>
+      <h2 class="sec-title">Courses Taught</h2>
+    </div>
     <div class="teaching-grid">
       <div class="teaching-card">
-        <div class="teaching-inst">San Jose City College & SF Bay University</div>
+        <div class="teaching-inst">San Jose City College &amp; SF Bay University</div>
         <div class="teaching-role">CIS Faculty / Adjunct Professor</div>
-        <ul class="course-list">
-          <li>Python Programming & Applied AI</li>
-          <li>Database Systems & Architecture</li>
+        <ul class="teaching-list">
+          <li>Python Programming &amp; Applied AI</li>
+          <li>Database Systems &amp; Architecture</li>
           <li>Web Development (HTML, CSS, JS)</li>
-          <li>System Analysis & Design</li>
+          <li>System Analysis &amp; Design</li>
           <li>Introduction to Machine Learning</li>
         </ul>
       </div>
       <div class="teaching-card">
         <div class="teaching-inst">DeVry University</div>
         <div class="teaching-role">Visiting Professor III</div>
-        <ul class="course-list">
-          <li>Logic & Design with Python</li>
-          <li>C++ Programming (OOP & Advanced)</li>
-          <li>Object-Oriented Analysis & Design</li>
+        <ul class="teaching-list">
+          <li>Logic &amp; Design with Python</li>
+          <li>C++ Programming (OOP &amp; Advanced)</li>
+          <li>Object-Oriented Analysis &amp; Design</li>
           <li>Software Engineering II</li>
           <li>Business Application Programming (Java)</li>
         </ul>
@@ -805,162 +688,114 @@
       <div class="teaching-card">
         <div class="teaching-inst">De Anza College</div>
         <div class="teaching-role">Coding Instructor</div>
-        <ul class="course-list">
+        <ul class="teaching-list">
           <li>Python for Raspberry Pi</li>
           <li>Java Programming Language</li>
           <li>JavaScript for Web Development</li>
-          <li>STEM for Middle & High School</li>
+          <li>STEM for Middle &amp; High School</li>
         </ul>
       </div>
       <div class="teaching-card">
         <div class="teaching-inst">Sipna College of Engineering</div>
         <div class="teaching-role">Lecturer / Research Associate</div>
-        <ul class="course-list">
+        <ul class="teaching-list">
           <li>Digital Signal Processing (MATLAB)</li>
-          <li>Computer Architecture & Microprocessors</li>
-          <li>Network Analysis & Synthesis</li>
-          <li>Electronic Design & Circuits</li>
+          <li>Computer Architecture &amp; Microprocessors</li>
+          <li>Network Analysis &amp; Synthesis</li>
+          <li>Electronic Design &amp; Circuits</li>
           <li>Digital Design</li>
         </ul>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ── Skills ────────────────────────────────────────────────────────────── -->
-<section id="skills" class="section">
-  <div class="container">
-    <p class="section-label">Expertise</p>
-    <h2 class="section-title">Technical Skills</h2>
-    <div class="divider"></div>
-
+  <!-- SKILLS -->
+  <section class="section">
+    <div class="sec-header">
+      <span class="sec-label">07</span>
+      <h2 class="sec-title">Technical Skills</h2>
+    </div>
     <div class="skills-grid">
-      <div class="skill-group">
+      <div>
         <div class="skill-group-title">AI / ML</div>
-        <ul class="skill-list">
-          <li>Machine Learning</li>
-          <li>Deep Learning</li>
-          <li>CNN · LSTM · Hybrid Models</li>
-          <li>EEG Signal Processing</li>
-          <li>Biomedical AI</li>
-          <li>Prompt Engineering (LLMs)</li>
-        </ul>
+        <div class="skill-item">Machine Learning</div>
+        <div class="skill-item">Deep Learning</div>
+        <div class="skill-item">CNN · LSTM · Hybrid Models</div>
+        <div class="skill-item">EEG &amp; ECG Signal Processing</div>
+        <div class="skill-item">Biomedical AI</div>
+        <div class="skill-item">Prompt Engineering (LLMs)</div>
       </div>
-      <div class="skill-group">
+      <div>
         <div class="skill-group-title">Frameworks</div>
-        <ul class="skill-list">
-          <li>TensorFlow · PyTorch</li>
-          <li>scikit-learn</li>
-          <li>Streamlit</li>
-          <li>HuggingFace</li>
-          <li>MATLAB / Simulink</li>
-          <li>SHAP (Explainable AI)</li>
-        </ul>
+        <div class="skill-item">TensorFlow · PyTorch</div>
+        <div class="skill-item">scikit-learn</div>
+        <div class="skill-item">Streamlit</div>
+        <div class="skill-item">HuggingFace</div>
+        <div class="skill-item">MATLAB / Simulink</div>
+        <div class="skill-item">SHAP (Explainable AI)</div>
       </div>
-      <div class="skill-group">
+      <div>
         <div class="skill-group-title">Languages</div>
-        <ul class="skill-list">
-          <li>Python</li>
-          <li>Java</li>
-          <li>C++</li>
-          <li>JavaScript</li>
-          <li>SQL</li>
-          <li>MATLAB</li>
-        </ul>
+        <div class="skill-item">Python</div>
+        <div class="skill-item">Java</div>
+        <div class="skill-item">C++</div>
+        <div class="skill-item">JavaScript</div>
+        <div class="skill-item">SQL</div>
+        <div class="skill-item">MATLAB</div>
       </div>
-      <div class="skill-group">
+      <div>
         <div class="skill-group-title">Domain</div>
-        <ul class="skill-list">
-          <li>Database Architecture</li>
-          <li>Curriculum Design</li>
-          <li>Research Mentorship</li>
-          <li>IEEE Paper Review</li>
-          <li>Full-Stack Web Dev</li>
-          <li>Data Analysis</li>
-        </ul>
+        <div class="skill-item">Database Architecture</div>
+        <div class="skill-item">Curriculum Design</div>
+        <div class="skill-item">Research Mentorship</div>
+        <div class="skill-item">IEEE Paper Review</div>
+        <div class="skill-item">Full-Stack Web Dev</div>
+        <div class="skill-item">Data Analysis</div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ── Contact ────────────────────────────────────────────────────────────── -->
-<section id="contact" class="section">
-  <div class="container">
-    <p class="section-label">Get In Touch</p>
-    <h2 class="section-title">Contact</h2>
-    <p class="section-sub">Open to collaborations in AI research, academic partnerships, and student mentorship.</p>
-    <div class="divider" style="background:var(--teal-light);"></div>
-
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="sec-header">
+      <span class="sec-label">08</span>
+      <h2 class="sec-title">Contact</h2>
+    </div>
     <div class="contact-grid">
-      <div>
-        <div class="contact-item">
-          <div class="contact-icon">✉</div>
-          <div class="contact-detail">
-            <span>Email</span>
-            <a href="mailto:pragatiusstudies@gmail.com">pragatiusstudies@gmail.com</a>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">in</div>
-          <div class="contact-detail">
-            <span>LinkedIn</span>
-            <a href="https://www.linkedin.com/in/pragatidharmale-80ab2037" target="_blank">linkedin.com/in/pragatidharmale</a>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">⌥</div>
-          <div class="contact-detail">
-            <span>GitHub</span>
-            <a href="https://github.com/pragatiusstudies" target="_blank">github.com/pragatiusstudies</a>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">📍</div>
-          <div class="contact-detail">
-            <span>Location</span>
-            <a href="#">San Jose, California, USA</a>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <p style="color:rgba(255,255,255,0.6); font-size:0.95rem; line-height:1.9; margin-bottom:1.5rem;">
-          I'm always happy to connect with fellow researchers, educators, and technologists.
-          Whether you're interested in collaborating on AI research, discussing curriculum design,
-          or exploring academic partnerships — feel free to reach out.
-        </p>
-        <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-          <a href="mailto:pragatiusstudies@gmail.com" class="btn btn-primary">Send Email</a>
-          <a href="https://www.linkedin.com/in/pragatidharmale-80ab2037" target="_blank" class="btn btn-outline" style="color:#fff; border-color:rgba(255,255,255,0.3);">Connect on LinkedIn</a>
-        </div>
-      </div>
+      <a href="mailto:pragatiusstudies@gmail.com" class="contact-item">
+        <span class="contact-type">Email</span>
+        <span class="contact-val-sm">pragatiusstudies@gmail.com</span>
+      </a>
+      <a href="https://www.linkedin.com/in/pragatidharmale-80ab2037" class="contact-item" target="_blank" rel="noopener">
+        <span class="contact-type">LinkedIn</span>
+        <span class="contact-val-sm">linkedin.com/in/pragatidharmale</span>
+      </a>
+      <a href="https://github.com/pragatiusstudies" class="contact-item" target="_blank" rel="noopener">
+        <span class="contact-type">GitHub</span>
+        <span class="contact-val-sm">github.com/pragatiusstudies</span>
+      </a>
+      <a href="https://sites.google.com/asdrp.org/dharmale/home" class="contact-item" target="_blank" rel="noopener">
+        <span class="contact-type">Research Group</span>
+        <span class="contact-val-sm">Pragati Group @ ASDRP</span>
+      </a>
     </div>
-  </div>
-</section>
+  </section>
 
+</div><!-- /page -->
+
+<!-- FOOTER -->
 <footer>
-  © 2026 Pragati Dharmale · San Jose, California ·
-  Built with HTML/CSS · Hosted on GitHub Pages
+  <span class="footer-text">© 2026 Pragati Dharmale · San Jose, California</span>
+  <span class="footer-text">Built with HTML/CSS · Hosted on GitHub Pages</span>
 </footer>
 
 <script>
-  // Scroll-triggered fade-in for sections
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.paper-card, .patent-card, .project-card, .timeline-item, .teaching-card, .skill-group').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    observer.observe(el);
-  });
+function showPubs(tab, btn) {
+  document.querySelectorAll('.pub-panel').forEach(function(p){ p.style.display = 'none'; });
+  document.querySelectorAll('.pub-tab').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('pubs-' + tab).style.display = 'flex';
+  btn.classList.add('active');
+}
 </script>
-
 </body>
 </html>
