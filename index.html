@@ -296,9 +296,10 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
         <div class="stat"><div class="stat-n">5</div><div class="stat-l">Institutions</div></div>
       </div>
       <div class="card-links">
-        <a href="https://www.linkedin.com/in/pragatidharmale-80ab2037" class="card-link" target="_blank" rel="noopener"><span class="card-link-dot"></span>linkedin.com/in/pragatidharmale</a>
+        <a href="https://www.linkedin.com/in/pragati-dharmale-80ab2037/" class="card-link" target="_blank" rel="noopener"><span class="card-link-dot"></span>linkedin.com/in/pragati-dharmale-80ab2037</a>
         <a href="https://github.com/pragatiusstudies" class="card-link" target="_blank" rel="noopener"><span class="card-link-dot"></span>github.com/pragatiusstudies</a>
         <a href="mailto:pragatiusstudies@gmail.com" class="card-link"><span class="card-link-dot"></span>pragatiusstudies@gmail.com</a>
+        <a href="https://pragatiusstudies.github.io/" class="card-link" target="_blank" rel="noopener"><span class="card-link-dot"></span>pragatiusstudies.github.io</a>
         <a href="https://sites.google.com/asdrp.org/dharmale/home" class="card-link" target="_blank" rel="noopener"><span class="card-link-dot"></span>Pragati Group @ ASDRP</a>
       </div>
     </div>
@@ -317,6 +318,7 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
     <div class="pub-tabs">
       <button class="pub-tab active" onclick="showPubs('ieee', this)">IEEE <span class="tab-cnt">5</span></button>
       <button class="pub-tab" onclick="showPubs('sccur', this)">SCCUR <span class="tab-cnt">4</span></button>
+      <button class="pub-tab" onclick="showPubs('gpu', this)">GPU &amp; HPC <span class="tab-cnt">2</span></button>
     </div>
 
     <!-- IEEE -->
@@ -398,7 +400,7 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
 
     <!-- SCCUR -->
     <div class="pub-panel" id="pubs-sccur" style="display:none">
-      <div class="sccur-note">Southern California Conference for Undergraduate Research (SCCUR) — annual undergraduate symposium hosted at Cal State Fullerton.</div>
+      <div class="sccur-note">Southern California Conference for Undergraduate Research (<a href="https://www.sccur.org" target="_blank" rel="noopener" style="color:var(--teal);text-decoration:underline;">SCCUR</a>) — annual undergraduate research symposium. <a href="https://www.sccur.org" target="_blank" rel="noopener" style="color:var(--teal);font-family:var(--mono);font-size:11px;">sccur.org →</a></div>
       <div class="pub-item">
         <span class="pub-num">01</span>
         <div>
@@ -450,6 +452,44 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
         </div>
       </div>
     </div>
+
+    <!-- GPU / HPC papers -->
+    
+      <div class="pub-item">
+        <span class="pub-num">01</span>
+        <div>
+          <div class="pub-venue-badge">ResearchGate · 2015</div>
+          <div class="pub-title">Multicore GPU for SAR Image Processing</div>
+          <div class="pub-meta">Khadtare M., <strong>Dharmale P.</strong>, Somwanshi P., Bhattacharya C. · SPPU Pune / SNHU / CRL / DIAT · 2015</div>
+          <div class="pub-meta" style="margin-top:4px;font-size:11px;">Parallel processing of SAR data using multi-core GP-GPUs. Reconstructs 2D images from echo pulses; benchmarks across NVIDIA GT, Tesla, and Fermi GPUs on 1024×1024 to 4096×4096 pixel images. Fermi S2050 achieved maximum throughput.</div>
+          <div class="tags" style="margin-top:8px;">
+            <span class="tag tag-ieee">GPU / GPGPU</span>
+            <span class="tag tag-signal">SAR Imaging</span>
+            <span class="tag tag-ai">Parallel Computing</span>
+            <span class="tag tag-default">NVIDIA CUDA</span>
+          </div>
+        </div>
+        <a href="https://www.researchgate.net/publication/314113852_Multicore_GPU_for_SAR_image_processing" target="_blank" rel="noopener" style="font-family:var(--mono);font-size:10px;color:var(--teal);white-space:nowrap;align-self:start;padding-top:2px;">View →</a>
+      </div>
+
+      <div class="pub-item">
+        <span class="pub-num">02</span>
+        <div>
+          <div class="pub-venue-badge">GTC Publication</div>
+          <div class="pub-title">Accelerated SWT-Based EEG Denoising Technique to Correct the Ocular Artifact</div>
+          <div class="pub-meta"><strong>Dharmale P.</strong>, Khadtare M. </div>
+          <div class="pub-meta" style="margin-top:4px;font-size:11px;">Stationary Wavelet Transform via fast lifting approach enabling data-parallel GPU execution. Demonstrates real-time EEG denoising from ocular artifacts for BCI computation with GPU performance benchmarking.</div>
+          <div class="tags" style="margin-top:8px;">
+            <span class="tag tag-ieee">IEEE</span>
+            <span class="tag tag-ieee">GPU / CUDA</span>
+            <span class="tag tag-signal">EEG Signal Processing</span>
+            <span class="tag tag-ai">BCI</span>
+            <span class="tag tag-default">Wavelet Transform</span>
+          </div>
+        </div>
+
+    </div>
+
   </section>
 
   <!-- ACTIVE RESEARCH PROJECTS -->
@@ -610,7 +650,7 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
         <div>
           <div class="exp-org">San Jose City College</div>
           <div class="exp-role">CIS Faculty</div>
-          <div class="exp-desc">Teaching Python, AI, Databases, System Analysis, and Web Development with a focus on project-based, real-world learning.</div>
+          <div class="exp-desc">Teaching Python, AI, Databases, System Analysis, and Web Development with a focus on project-based, real-world learning. Also delivers UC Berkeley's <strong>Data 8</strong> curriculum via <strong>CIS-107 Technest 2: Data Science</strong>, and Cisco's IoT curriculum via <strong>CIS-108 Technest 3: Internet of Things</strong>.</div>
         </div>
       </div>
       <div class="exp-item">
@@ -618,7 +658,7 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
         <div>
           <div class="exp-org">SF Bay University · Fremont, CA</div>
           <div class="exp-role">Adjunct Professor</div>
-          <div class="exp-desc">Teaching advanced CIS and AI courses at the university level.</div>
+          <div class="exp-desc">Teaching graduate-level courses including Advanced Web Programming (CS526), Advanced Database Design &amp; Analysis (CS547), and Data Modeling &amp; Implementation Techniques (CS457/CS457L).</div>
         </div>
       </div>
       <div class="exp-item">
@@ -662,18 +702,162 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
       <span class="sec-label">06</span>
       <h2 class="sec-title">Courses Taught</h2>
     </div>
-    <div class="teaching-grid">
-      <div class="teaching-card">
-        <div class="teaching-inst">San Jose City College &amp; SF Bay University</div>
-        <div class="teaching-role">CIS Faculty / Adjunct Professor</div>
-        <ul class="teaching-list">
-          <li>Python Programming &amp; Applied AI</li>
-          <li>Database Systems &amp; Architecture</li>
-          <li>Web Development (HTML, CSS, JS)</li>
-          <li>System Analysis &amp; Design</li>
-          <li>Introduction to Machine Learning</li>
-        </ul>
+
+    <!-- AI/ML Highlight Strip -->
+    <div style="background:var(--teal-light);border:1px solid var(--teal-mid);border-radius:10px;padding:16px 20px;margin-bottom:24px;display:flex;align-items:flex-start;gap:14px;">
+      <div style="font-size:20px;flex-shrink:0;margin-top:2px;">🎯</div>
+      <div>
+        <div style="font-family:var(--mono);font-size:10px;font-weight:600;color:var(--teal);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:5px;">High-Value for AI/ML &amp; Graduate Students</div>
+        <div style="font-size:13px;color:var(--ink2);line-height:1.7;">
+          Courses marked <span style="background:var(--teal);color:white;font-family:var(--mono);font-size:9px;font-weight:600;padding:2px 8px;border-radius:4px;letter-spacing:0.06em;">★ AI/ML</span> are directly relevant to machine learning, data science, and AI application development — ideal for graduate students, researchers, and practitioners looking to deepen applied AI skills.
+        </div>
       </div>
+    </div>
+
+    <!-- SF Bay University — Graduate Level -->
+    <div style="margin-bottom:28px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+        <div style="font-family:var(--mono);font-size:10px;font-weight:600;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;">SF Bay University · Adjunct Professor</div>
+        <div style="flex:1;height:1px;background:var(--border);"></div>
+        <span style="font-family:var(--mono);font-size:9px;font-weight:600;padding:3px 10px;border-radius:4px;background:var(--accent-light);color:var(--accent);border:1px solid rgba(26,60,94,0.2);white-space:nowrap;">Graduate Level</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+
+        <div style="background:var(--white);border:2px solid var(--teal);border-radius:10px;padding:16px 18px;position:relative;">
+          <div style="position:absolute;top:-1px;right:10px;background:var(--teal);color:white;font-family:var(--mono);font-size:9px;font-weight:600;padding:2px 8px;border-radius:0 0 5px 5px;letter-spacing:0.06em;">★ AI/ML</div>
+          <div style="font-family:var(--mono);font-size:10px;color:var(--teal);font-weight:600;margin-bottom:4px;">CS526</div>
+          <div style="font-size:13px;font-weight:600;margin-bottom:6px;line-height:1.3;">Advanced Web Programming</div>
+          <div style="font-size:11px;color:var(--ink3);line-height:1.5;">Full-stack web development, APIs, and modern frameworks — including AI-powered web application integration.</div>
+          <div style="margin-top:10px;display:flex;gap:5px;flex-wrap:wrap;">
+            <span style="font-family:var(--mono);font-size:9px;padding:2px 7px;border-radius:4px;background:var(--sand);color:var(--ink3);border:1px solid var(--border);">Sp 2024</span>
+            <span style="font-family:var(--mono);font-size:9px;padding:2px 7px;border-radius:4px;background:var(--sand);color:var(--ink3);border:1px solid var(--border);">Su 2023</span>
+            <span style="font-family:var(--mono);font-size:9px;padding:2px 7px;border-radius:4px;background:var(--sand);color:var(--ink3);border:1px solid var(--border);">Su 2024</span>
+            <span style="font-family:var(--mono);font-size:9px;padding:2px 7px;border-radius:4px;background:var(--sand);color:var(--ink3);border:1px solid var(--border);">Sp 2025</span>
+            <span style="font-family:var(--mono);font-size:9px;padding:2px 7px;border-radius:4px;background:var(--teal-light);color:var(--teal);border:1px solid var(--teal-mid);">Sp 2026 ●</span>
+          </div>
+        </div>
+
+        <div style="background:var(--white);border:2px solid var(--teal);border-radius:10px;padding:16px 18px;position:relative;">
+          <div style="position:absolute;top:-1px;right:10px;background:var(--teal);color:white;font-family:var(--mono);font-size:9px;font-weight:600;padding:2px 8px;border-radius:0 0 5px 5px;letter-spacing:0.06em;">★ AI/ML</div>
+          <div style="font-family:var(--mono);font-size:10px;color:var(--teal);font-weight:600;margin-bottom:4px;">CS547</div>
+          <div style="font-size:13px;font-weight:600;margin-bottom:6px;line-height:1.3;">Advanced Database Design and Analysis</div>
+          <div style="font-size:11px;color:var(--ink3);line-height:1.5;">Advanced data modeling, query optimization, distributed databases, and analytics pipelines — critical foundation for AI/ML data infrastructure.</div>
+          <div style="margin-top:10px;display:flex;gap:5px;flex-wrap:wrap;">
+            <span style="font-family:var(--mono);font-size:9px;padding:2px 7px;border-radius:4px;background:var(--sand);color:var(--ink3);border:1px solid var(--border);">Sp 2025</span>
+          </div>
+        </div>
+
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:16px 18px;">
+          <div style="font-family:var(--mono);font-size:10px;color:var(--ink3);font-weight:600;margin-bottom:4px;">CS457 / CS457L</div>
+          <div style="font-size:13px;font-weight:600;margin-bottom:6px;line-height:1.3;">Data Modeling &amp; Implementation Techniques + Lab</div>
+          <div style="font-size:11px;color:var(--ink3);line-height:1.5;">Relational data modeling, ER diagrams, normalization, and database implementation. Lab component reinforces hands-on schema design and SQL skills.</div>
+          <div style="margin-top:10px;display:flex;gap:5px;flex-wrap:wrap;">
+            <span style="font-family:var(--mono);font-size:9px;padding:2px 7px;border-radius:4px;background:var(--sand);color:var(--ink3);border:1px solid var(--border);">Fa 2022–25</span>
+            <span style="font-family:var(--mono);font-size:9px;padding:2px 7px;border-radius:4px;background:var(--sand);color:var(--ink3);border:1px solid var(--border);">Sp 2023–25</span>
+            <span style="font-family:var(--mono);font-size:9px;padding:2px 7px;border-radius:4px;background:var(--sand);color:var(--ink3);border:1px solid var(--border);">Su 2023–24</span>
+            <span style="font-family:var(--mono);font-size:9px;padding:2px 7px;border-radius:4px;background:var(--teal-light);color:var(--teal);border:1px solid var(--teal-mid);">Sp 2026 ●</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SJCC Full Course List -->
+    <div style="margin-bottom:28px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+        <div style="font-family:var(--mono);font-size:10px;font-weight:600;color:var(--teal);letter-spacing:0.12em;text-transform:uppercase;">San Jose City College · CIS Faculty</div>
+        <div style="flex:1;height:1px;background:var(--border);"></div>
+        <span style="font-family:var(--mono);font-size:9px;font-weight:600;padding:3px 10px;border-radius:4px;background:var(--teal-light);color:var(--teal);border:1px solid var(--teal-mid);white-space:nowrap;">Associate / Transfer Level</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+
+        <!-- AI/ML highlighted courses -->
+        <div style="background:var(--white);border:2px solid var(--teal);border-radius:10px;padding:16px 18px;position:relative;">
+          <div style="position:absolute;top:-1px;right:10px;background:var(--teal);color:white;font-family:var(--mono);font-size:9px;font-weight:600;padding:2px 8px;border-radius:0 0 5px 5px;letter-spacing:0.06em;">★ AI/ML</div>
+          <div style="font-family:var(--mono);font-size:10px;color:var(--teal);font-weight:600;margin-bottom:4px;">CIS-107</div>
+          <div style="font-size:13px;font-weight:600;margin-bottom:4px;line-height:1.3;">Technest 2: Data Science</div>
+          <div style="font-size:11px;color:var(--ink3);line-height:1.5;margin-bottom:8px;">Python-based data analysis, visualization, statistical inference, and intro ML using real-world datasets.</div>
+          <span style="font-family:var(--mono);font-size:9px;font-weight:600;padding:2px 8px;border-radius:4px;background:var(--teal-light);color:var(--teal);border:1px solid var(--teal-mid);">UC Berkeley Data 8</span>
+          <div style="margin-top:8px;">
+            <span style="font-family:var(--mono);font-size:9px;padding:2px 7px;border-radius:4px;background:var(--sand);color:var(--ink3);border:1px solid var(--border);">Sp 2024 · Milpitas Ext.</span>
+          </div>
+        </div>
+
+        <div style="background:var(--white);border:2px solid var(--teal);border-radius:10px;padding:16px 18px;position:relative;">
+          <div style="position:absolute;top:-1px;right:10px;background:var(--teal);color:white;font-family:var(--mono);font-size:9px;font-weight:600;padding:2px 8px;border-radius:0 0 5px 5px;letter-spacing:0.06em;">★ AI/ML</div>
+          <div style="font-family:var(--mono);font-size:10px;color:var(--teal);font-weight:600;margin-bottom:4px;">CIS-106</div>
+          <div style="font-size:13px;font-weight:600;margin-bottom:4px;line-height:1.3;">Intro to Coding and Python</div>
+          <div style="font-size:11px;color:var(--ink3);line-height:1.5;margin-bottom:8px;">Python fundamentals as the gateway to AI/ML. Foundation course for data science pathway.</div>
+          <div style="margin-top:8px;display:flex;gap:5px;flex-wrap:wrap;">
+            <span style="font-family:var(--mono);font-size:9px;padding:2px 7px;border-radius:4px;background:var(--sand);color:var(--ink3);border:1px solid var(--border);">Sp 2025</span>
+            <span style="font-family:var(--mono);font-size:9px;padding:2px 7px;border-radius:4px;background:var(--teal-light);color:var(--teal);border:1px solid var(--teal-mid);">Sp 2026 ●</span>
+          </div>
+        </div>
+
+        <div style="background:var(--white);border:2px solid var(--teal);border-radius:10px;padding:16px 18px;position:relative;">
+          <div style="position:absolute;top:-1px;right:10px;background:var(--teal);color:white;font-family:var(--mono);font-size:9px;font-weight:600;padding:2px 8px;border-radius:0 0 5px 5px;letter-spacing:0.06em;">★ AI/ML</div>
+          <div style="font-family:var(--mono);font-size:10px;color:var(--teal);font-weight:600;margin-bottom:4px;">CIS-122</div>
+          <div style="font-size:13px;font-weight:600;margin-bottom:4px;line-height:1.3;">SQL for Data Analytics</div>
+          <div style="font-size:11px;color:var(--ink3);line-height:1.5;margin-bottom:8px;">SQL querying, data wrangling, and analytical reporting — core skills for any ML/data pipeline.</div>
+          <div style="margin-top:8px;">
+            <span style="font-family:var(--mono);font-size:9px;padding:2px 7px;border-radius:4px;background:var(--sand);color:var(--ink3);border:1px solid var(--border);">Sp 2025 · Zoom Hybrid</span>
+          </div>
+        </div>
+
+        <div style="background:var(--white);border:2px solid var(--teal);border-radius:10px;padding:16px 18px;position:relative;">
+          <div style="position:absolute;top:-1px;right:10px;background:var(--teal);color:white;font-family:var(--mono);font-size:9px;font-weight:600;padding:2px 8px;border-radius:0 0 5px 5px;letter-spacing:0.06em;">★ AI/ML</div>
+          <div style="font-family:var(--mono);font-size:10px;color:var(--teal);font-weight:600;margin-bottom:4px;">CIS-024C</div>
+          <div style="font-size:13px;font-weight:600;margin-bottom:4px;line-height:1.3;">Python Programming</div>
+          <div style="font-size:11px;color:var(--ink3);line-height:1.5;margin-bottom:8px;">Intermediate Python — OOP, libraries, and scripting. Direct prerequisite for ML and data science work.</div>
+          <div style="margin-top:8px;display:flex;gap:5px;flex-wrap:wrap;">
+            <span style="font-family:var(--mono);font-size:9px;padding:2px 7px;border-radius:4px;background:var(--sand);color:var(--ink3);border:1px solid var(--border);">Su 2024</span>
+            <span style="font-family:var(--mono);font-size:9px;padding:2px 7px;border-radius:4px;background:var(--sand);color:var(--ink3);border:1px solid var(--border);">Fa 2025</span>
+          </div>
+        </div>
+
+        <div style="background:var(--white);border:2px solid var(--teal);border-radius:10px;padding:16px 18px;position:relative;">
+          <div style="position:absolute;top:-1px;right:10px;background:var(--teal);color:white;font-family:var(--mono);font-size:9px;font-weight:600;padding:2px 8px;border-radius:0 0 5px 5px;letter-spacing:0.06em;">★ AI/ML</div>
+          <div style="font-family:var(--mono);font-size:10px;color:var(--teal);font-weight:600;margin-bottom:4px;">CIS-055</div>
+          <div style="font-size:13px;font-weight:600;margin-bottom:4px;line-height:1.3;">Data Structures: Programming</div>
+          <div style="font-size:11px;color:var(--ink3);line-height:1.5;margin-bottom:8px;">Algorithms and data structures — foundational for ML model implementation and performance optimization.</div>
+          <div style="margin-top:8px;display:flex;gap:5px;flex-wrap:wrap;">
+            <span style="font-family:var(--mono);font-size:9px;padding:2px 7px;border-radius:4px;background:var(--sand);color:var(--ink3);border:1px solid var(--border);">Sp 2025</span>
+            <span style="font-family:var(--mono);font-size:9px;padding:2px 7px;border-radius:4px;background:var(--teal-light);color:var(--teal);border:1px solid var(--teal-mid);">Sp 2026 ●</span>
+          </div>
+        </div>
+
+        <!-- IoT course -->
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:16px 18px;position:relative;">
+          <div style="font-family:var(--mono);font-size:10px;color:var(--ink3);font-weight:600;margin-bottom:4px;">CIS-108</div>
+          <div style="font-size:13px;font-weight:600;margin-bottom:4px;line-height:1.3;">Technest 3: Internet of Things</div>
+          <div style="font-size:11px;color:var(--ink3);line-height:1.5;margin-bottom:8px;">Networked devices, IoT architecture, and embedded systems — bridges hardware and AI edge computing.</div>
+          <span style="font-family:var(--mono);font-size:9px;font-weight:600;padding:2px 8px;border-radius:4px;background:var(--accent-light);color:var(--accent);border:1px solid rgba(26,60,94,0.2);">Cisco Curriculum</span>
+          <div style="margin-top:8px;">
+            <span style="font-family:var(--mono);font-size:9px;padding:2px 7px;border-radius:4px;background:var(--sand);color:var(--ink3);border:1px solid var(--border);">Fa 2023 · Milpitas Ext.</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Standard SJCC courses row -->
+      <div style="margin-top:12px;background:var(--white);border:1px solid var(--border);border-radius:10px;padding:18px 20px;">
+        <div style="font-family:var(--mono);font-size:10px;color:var(--ink3);font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;">Additional SJCC Courses</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+          <span style="font-size:12px;font-weight:500;padding:5px 12px;border-radius:6px;background:var(--sand);border:1px solid var(--border);color:var(--ink2);">CIS-041 · Intro to Computer Info Systems</span>
+          <span style="font-size:12px;font-weight:500;padding:5px 12px;border-radius:6px;background:var(--sand);border:1px solid var(--border);color:var(--ink2);">CIS-060 · Systems Analysis &amp; Design</span>
+          <span style="font-size:12px;font-weight:500;padding:5px 12px;border-radius:6px;background:var(--sand);border:1px solid var(--border);color:var(--ink2);">CIS-084 · Java Programming</span>
+          <span style="font-size:12px;font-weight:500;padding:5px 12px;border-radius:6px;background:var(--sand);border:1px solid var(--border);color:var(--ink2);">CIS-054 · C/C++ Programming</span>
+          <span style="font-size:12px;font-weight:500;padding:5px 12px;border-radius:6px;background:var(--sand);border:1px solid var(--border);color:var(--ink2);">CIS-023 · JavaScript Programming</span>
+          <span style="font-size:12px;font-weight:500;padding:5px 12px;border-radius:6px;background:var(--sand);border:1px solid var(--border);color:var(--ink2);">CIS-020 · XML Fundamentals</span>
+          <span style="font-size:12px;font-weight:500;padding:5px 12px;border-radius:6px;background:var(--sand);border:1px solid var(--border);color:var(--ink2);">CIS-020A · Advanced XML</span>
+          <span style="font-size:12px;font-weight:500;padding:5px 12px;border-radius:6px;background:var(--sand);border:1px solid var(--border);color:var(--ink2);">CIS-140 · Technical Support Fundamentals</span>
+          <span style="font-size:12px;font-weight:500;padding:5px 12px;border-radius:6px;background:var(--sand);border:1px solid var(--border);color:var(--ink2);">CIS-142 · Operating Systems</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Other institutions condensed -->
+    <div class="teaching-grid" style="grid-template-columns:repeat(3,1fr);">
       <div class="teaching-card">
         <div class="teaching-inst">DeVry University</div>
         <div class="teaching-role">Visiting Professor III</div>
@@ -766,13 +950,17 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
         <span class="contact-type">Email</span>
         <span class="contact-val-sm">pragatiusstudies@gmail.com</span>
       </a>
-      <a href="https://www.linkedin.com/in/pragatidharmale-80ab2037" class="contact-item" target="_blank" rel="noopener">
+      <a href="https://www.linkedin.com/in/pragati-dharmale-80ab2037/" class="contact-item" target="_blank" rel="noopener">
         <span class="contact-type">LinkedIn</span>
-        <span class="contact-val-sm">linkedin.com/in/pragatidharmale</span>
+        <span class="contact-val-sm">linkedin.com/in/pragati-dharmale-80ab2037</span>
       </a>
       <a href="https://github.com/pragatiusstudies" class="contact-item" target="_blank" rel="noopener">
         <span class="contact-type">GitHub</span>
         <span class="contact-val-sm">github.com/pragatiusstudies</span>
+      </a>
+      <a href="https://pragatiusstudies.github.io/" class="contact-item" target="_blank" rel="noopener">
+        <span class="contact-type">Portfolio Site</span>
+        <span class="contact-val-sm">pragatiusstudies.github.io</span>
       </a>
       <a href="https://sites.google.com/asdrp.org/dharmale/home" class="contact-item" target="_blank" rel="noopener">
         <span class="contact-type">Research Group</span>
@@ -788,13 +976,21 @@ footer { border-top: 1px solid var(--border); padding: 24px 48px; display: flex;
   <span class="footer-text">© 2026 Pragati Dharmale · San Jose, California</span>
   <span class="footer-text">Built with HTML/CSS · Hosted on GitHub Pages</span>
 </footer>
-
 <script>
 function showPubs(tab, btn) {
-  document.querySelectorAll('.pub-panel').forEach(function(p){ p.style.display = 'none'; });
-  document.querySelectorAll('.pub-tab').forEach(function(b){ b.classList.remove('active'); });
-  document.getElementById('pubs-' + tab).style.display = 'flex';
+  document.querySelectorAll('.pub-panel').forEach(function(p) {
+    p.style.display = 'none';
+  });
+  document.querySelectorAll('.pub-tab').forEach(function(b) {
+    b.classList.remove('active');
+  });
+  var panel = document.getElementById('pubs-' + tab);
+  if (panel) panel.style.display = 'flex';
   btn.classList.add('active');
+}
+function scrollSec(id) {
+  var el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 </script>
 </body>
